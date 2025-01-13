@@ -1,0 +1,222 @@
+{
+  "header": {
+    "emergency": "Emergency",
+    "lifeline": "Hospital Lifeline"
+  },
+  "search": {
+    "search": "Search Doctor or Service"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "service": "Range of Service",
+    "doctors": "Doctors",
+    "csr": "CSR",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "medicine": "Medicine",
+    "surgery": "Surgery",
+    "paediatric_surgery": "Paediatric Surgery",
+    "burn_plastic_surgery": "Burn & Plastic Surgery",
+    "neurosurgery": "Neurosurgery",
+    "cardiac_medicine": "Cardiac & Medicine",
+    "orthopedic": "Orthopedic",
+    "ent": "ENT",
+    "cancer": "Cancer",
+    "psychiatry": "Psychiatry",
+    "gynae_obs": "Gynae & Obs",
+    "paediatric": "Paediatric",
+    "kidney": "Kidney",
+    "medicine_kidney": "Medicine & Kidney",
+    "neuromedicine": "Neuromedicine",
+    "rheumatology": "Rheumatology",
+    "chest_medicine_heart": "Chest, Medicine & Heart",
+    "diabetes_hormone": "Diabetes & Hormone",
+    "physical_medicine": "Physical Medicine",
+    "respiratory_medicine": "Respiratory Medicine",
+    "liver_hepatology": "Liver (Hepatology)",
+    "urology": "Urology",
+    "dental": "Dental",
+    "skin_vd": "Skin & VD"
+  },
+  "footer": {
+    "contactInfo": {
+      "title": "Contact Information",
+      "hospitalName": "Demo Hospital",
+      "address": "1234 Hospital Rd, Patiya, Bangladesh",
+      "phone": "Phone: +8801365412345",
+      "email": "Email: info@patiyahospital.com"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": {
+        "aboutUs": "About Us",
+        "services": "Services",
+        "contactUs": "Contact Us",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy"
+      }
+    },
+    "followUs": {
+      "title": "Follow Us"
+    },
+    "location": {
+      "title": "Our Location"
+    },
+    "copyright": "@ 2025 Demo Hospital. All Rights Reserved."
+  },
+  "banner": {
+    "slide1": {
+      "title": "Welcome to Demo Hospital",
+      "subtitle": "Providing world-class healthcare services to our community.",
+      "buttonText": "Learn More"
+    },
+    "slide2": {
+      "title": "Expert Doctors",
+      "subtitle": "Experienced and dedicated professionals at your service.",
+      "buttonText": "Our Services"
+    },
+    "slide3": {
+      "title": "State-of-the-Art Facilities",
+      "subtitle": "Modern operating theaters and equipment for the best outcomes.",
+      "buttonText": "Explore Facilities"
+    },
+    "slide4": {
+      "title": "Community Health Camps",
+      "subtitle": "Extending care beyond the hospital walls.",
+      "buttonText": "Join Us"
+    }
+  },
+  "home-short": {
+    "departments": "Departments",
+    "services": "Medical Services",
+    "find": "Find a Doctor",
+    "request": "Request an Appointment",
+    "departments-details": "The Backbone of our Clinic",
+    "services-details": "A list of all available",
+    "find-details": "All our staff by department",
+    "request-details": "Call us or fill in a form",
+    "more": "More"
+  },
+  "csr": {
+    "title": "Our CSR Initiatives",
+    "community-title": "Community Outreach",
+    "community-description": "We actively engage with our community by organizing free medical camps, health checkups, and wellness programs for underserved populations.",
+    "community-alt": "Community Outreach",
+    "education-title": "Education & Awareness",
+    "education-description": "Spreading awareness about health and hygiene through educational programs is one of our primary objectives. We partner with schools and NGOs to empower communities with knowledge.",
+    "education-alt": "Education & Awareness",
+    "environment-title": "Environmental Sustainability",
+    "environment-description": "We are committed to reducing our carbon footprint by adopting eco-friendly practices and supporting reforestation efforts.",
+    "environment-alt": "Environmental Sustainability",
+    "disaster-title": "Disaster Relief",
+    "disaster-description": "During times of natural disasters, we provide essential medical aid, food, and support to affected communities to help them recover and rebuild.",
+    "disaster-alt": "Disaster Relief",
+    "cta-title": "Join Us in Making a Difference",
+    "cta-description": "We believe in the power of collective efforts. Partner with us to create a positive impact and make the world a healthier, happier place.",
+    "cta-button": "Contact Us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "What are your hospital's visiting hours?",
+    "a1": "Our visiting hours are from 9:00 AM to 8:00 PM daily.",
+    "q2": "How can I book an appointment?",
+    "a2": "You can book an appointment online or by calling our reception desk.",
+    "q3": "Do you offer emergency services?",
+    "a3": "Yes, we offer 24/7 emergency services.",
+    "q4": "What insurance providers do you work with?",
+    "a4": "We accept most major insurance providers. Please contact us for specific details.",
+    "q5": "Do you have a pharmacy on-site?",
+    "a5": "Yes, we have a fully equipped pharmacy within the hospital premises.",
+    "q6": "How do I find a specialist?",
+    "a6": "You can find a specialist by visiting our 'Find a Doctor' section on the website.",
+    "q7": "What are the payment options available?",
+    "a7": "We accept cash, credit/debit cards, and online payments.",
+    "q8": "Do you provide ambulance services?",
+    "a8": "Yes, we have a 24/7 ambulance service available.",
+    "q9": "Can I reschedule my appointment?",
+    "a9": "Yes, appointments can be rescheduled by contacting our reception.",
+    "q10": "What are the charges for a general consultation?",
+    "a10": "General consultation charges vary depending on the department. Please contact us for details.",
+    "q11": "Are medical tests available on-site?",
+    "a11": "Yes, we have a diagnostic lab offering a range of medical tests.",
+    "q12": "Is parking available at the hospital?",
+    "a12": "Yes, we provide free parking for all patients and visitors.",
+    "q13": "Can I get a medical certificate from the hospital?",
+    "a13": "Yes, medical certificates are provided upon request after a consultation.",
+    "q14": "Do you offer health check-up packages?",
+    "a14": "Yes, we offer a variety of health check-up packages tailored to your needs.",
+    "q15": "Is Wi-Fi available at the hospital?",
+    "a15": "Yes, complimentary Wi-Fi is available for all patients and visitors.",
+    "q16": "Do you offer maternity services?",
+    "a16": "Yes, we have comprehensive maternity and child care services.",
+    "q17": "What COVID-19 safety measures are in place?",
+    "a17": "We follow strict COVID-19 protocols, including regular sanitization and temperature checks.",
+    "q18": "How can I request my medical records?",
+    "a18": "Medical records can be requested at our medical records department.",
+    "q19": "Are meals provided for admitted patients?",
+    "a19": "Yes, we provide nutritious meals based on the patient's dietary requirements.",
+    "q20": "Do you have specialist doctors available on weekends?",
+    "a20": "Yes, specialist doctors are available on weekends. Please book an appointment in advance."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "We’re here to help! Reach out to us through any of the following means or fill out the contact form below.",
+    "emergency": {
+      "title": "Emergency",
+      "subtitle": "24x7 Emergency Service",
+      "phone": "+8801234567890"
+    },
+    "email": {
+      "title": "Email",
+      "subtitle": "Feel free to write to us",
+      "address": "info@demo-hospital.com"
+    },
+    "location": {
+      "title": "Location",
+      "address": "Demo Hospital, Patiya, Chattogram, Bangladesh",
+      "map": "View on Google Maps"
+    },
+    "form": {
+      "name": { "label": "Your Name", "placeholder": "Enter your full name" },
+      "email": {
+        "label": "Your Email",
+        "placeholder": "Enter your email address"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number"
+      },
+      "queryType": {
+        "title": "Type of Query:",
+        "options": {
+          "general": "General Inquiry",
+          "appointment": "Appointment Request",
+          "feedback": "Feedback"
+        }
+      },
+      "selectDoctor": {
+        "label": "Select Doctor",
+        "placeholder": "Choose a doctor"
+      },
+      "selectSpeciality": {
+        "label": "Select Speciality",
+        "placeholder": "Choose a speciality"
+      },
+      "appointmentDate": {
+        "label": "Select Date",
+        "placeholder": "Choose appointment date"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here"
+      },
+      "submitButton": "Submit"
+    },
+    "imageAlt": "Contact Us Image",
+    "map": {
+      "title": "Find us on Google Maps",
+      "src": "https://www.google.com/maps/embed?...YOUR_MAP_EMBED_URL..."
+    }
+  }
+}
