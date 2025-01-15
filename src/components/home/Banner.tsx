@@ -18,14 +18,14 @@ const Banner = () => {
       title: t("banner.slide2.title"),
       subtitle: t("banner.slide2.subtitle"),
       buttonText: t("banner.slide2.buttonText"),
-      buttonLink: "/services",
+      buttonLink: "/doctors",
     },
     {
       image: "/slider/ot.jpg",
       title: t("banner.slide3.title"),
       subtitle: t("banner.slide3.subtitle"),
       buttonText: t("banner.slide3.buttonText"),
-      buttonLink: "/facilities",
+      buttonLink: "/services",
     },
     {
       image: "/slider/camp.jpg",
