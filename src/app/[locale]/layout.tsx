@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <Header />
-      <div className="min-h-[calc(80vh-10px)]">{children}</div>
+      <div className="min-h-[calc(80vh-10px)] w-full">{children}</div>
       <Footer />
     </NextIntlClientProvider>
   );

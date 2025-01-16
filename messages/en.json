@@ -37,7 +37,19 @@
     "liver_hepatology": "Liver (Hepatology)",
     "urology": "Urology",
     "dental": "Dental",
-    "skin_vd": "Skin & VD"
+    "skin_vd": "Skin & VD",
+    "all": "All",
+    "about_demo": "About Demo Hospital",
+    "history": "Our History",
+    "md": "From MD's Desk",
+    "mission": "Mission & Vision",
+    "cardiology": "Cardiology",
+    "neurology": "Neurology",
+    "diagnostic": "Diagnostic Center",
+    "orthopedics": "Orthopedics",
+    "pediatrics": "Pediatrics",
+    "gynecology": "Gynecology",
+    "obstetrics": "Obstetrics"
   },
   "footer": {
     "contactInfo": {
@@ -218,5 +230,9 @@
       "title": "Find us on Google Maps",
       "src": "https://www.google.com/maps/embed?...YOUR_MAP_EMBED_URL..."
     }
+  },
+  "doctors": {
+    "title": "Meet Our Doctors",
+    "no_data": "No Doctors Found"
   }
 }

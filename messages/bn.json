@@ -37,7 +37,19 @@
     "liver_hepatology": "লিভার (হেপাটোলজি)",
     "urology": "ইউরোলজি",
     "dental": "ডেন্টাল",
-    "skin_vd": "ত্বক ও ভেনেরিয়াল ডিজিজ"
+    "skin_vd": "ত্বক ও ভেনেরিয়াল ডিজিজ",
+    "all": "সব",
+    "about_demo": "ডেমো হাসপাতাল সম্পর্কে",
+    "history": "আমাদের ইতিহাস",
+    "md": "ব্যবস্থাপনা পরিচালকের বক্তব্য",
+    "mission": "উদ্দেশ্য ও দৃষ্টি",
+    "cardiology": "কার্ডিওলজি",
+    "neurology": "নিউরোলজি",
+    "diagnostic": "ডায়াগনস্টিক সেন্টার",
+    "orthopedics": "অর্থোপেডিকস",
+    "pediatrics": "শিশু বিভাগ",
+    "gynecology": "গাইনোকোলজি",
+    "obstetrics": "প্রসূতি বিভাগ"
   },
   "footer": {
     "contactInfo": {
@@ -216,5 +228,9 @@
       "title": "গুগল ম্যাপে আমাদের খুঁজুন",
       "src": "https://www.google.com/maps/embed?...YOUR_MAP_EMBED_URL..."
     }
+  },
+  "doctors": {
+    "title": "আমাদের ডাক্তারগণ",
+    "no_data": "কোন ডাক্তার পাওয়া যায়নি"
   }
 }
