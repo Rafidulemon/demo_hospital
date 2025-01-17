@@ -8,7 +8,7 @@ export default function CSR() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Banner */}
-      <div className="relative w-full h-[220px] md:h-[600px]">
+      <div className="relative w-full h-[220px] md:h-[600px] mt-[100px] md:mt-[150px]">
         <Image
           src="/images/csr.jpg"
           alt="CSR"

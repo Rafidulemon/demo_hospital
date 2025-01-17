@@ -589,7 +589,7 @@ const DoctorsPage: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div className="relative w-full h-[220px] md:h-[600px]">
+      <div className="relative w-full h-[220px] md:h-[600px] mt-[100px] md:mt-[150px]">
         <Image
           src="/images/doctors/doctors.jpg"
           alt="Our Doctors"

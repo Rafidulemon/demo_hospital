@@ -30,7 +30,7 @@ const ContactPage = () => {
 
   return (
     <div className="w-full flex flex-col items-center bg-gray-50">
-      <div className="relative w-full h-[220px] md:h-[600px]">
+      <div className="relative w-full h-[220px] md:h-[600px] mt-[100px] md:mt-[150px]">
         <Image
           src="/images/contact.jpg"
           alt="Contact"

@@ -37,7 +37,7 @@ const Search = () => {
           value={query}
           onChange={handleSearch}
           placeholder={t("search.search")}
-          className="w-full px-4 py-2 h-[38px] border border-gray-300 rounded-l-md focus:outline-none text-[12px] text-black"
+          className="w-full px-4 py-2 h-[38px] border border-gray-300 rounded-l-md focus:outline-none text-[12px] md:text-[16px] text-black"
         />
         <div className="cursor-pointer w-[60px] h-[38px] bg-primary rounded-r-md flex flex-col justify-center items-center">
           <IoSearch color="#FFFFFF" size={20} />
@@ -45,7 +45,7 @@ const Search = () => {
       </div>
 
       <div
-        className="absolute top-[42px] left-0 w-full bg-white shadow-md rounded-md text-[12px] z-50"
+        className="absolute top-[42px] left-0 w-full bg-white shadow-md rounded-md text-[12px] md:text-[16px] z-50"
       >
         {query && (
           <ul>

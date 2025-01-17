@@ -62,15 +62,17 @@ const DesktopNav = () => {
   const navItems: {
     label: string;
     href: string;
+    en_href: string;
+    bn_href: string;
     dropdown?: DropdownKey;
   }[] = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.about"), href: "/about", dropdown: "about" },
-    { label: t("nav.service"), href: "/services", dropdown: "services" },
-    { label: t("nav.doctors"), href: "/doctors", dropdown: "doctors" },
-    { label: t("nav.faq"), href: "/faq" },
-    { label: t("nav.csr"), href: "/csr" },
-    { label: t("nav.contact"), href: "/contact" },
+    { label: t("nav.home"), href:"/", en_href: "/en", bn_href: "/bn" },
+    { label: t("nav.about"), href:"/about", en_href: "/en/about", bn_href: "/bn/about", dropdown: "about" },
+    { label: t("nav.service"), href:"/services", en_href: "/en/services", bn_href: "/bn/services", dropdown: "services" },
+    { label: t("nav.doctors"), href:"/doctors", en_href: "/en/doctors", bn_href: "/bn/doctors", dropdown: "doctors" },
+    { label: t("nav.faq"), href:"/faq", en_href: "/en/faq", bn_href: "/bn/faq" },
+    { label: t("nav.csr"), href:"/csr", en_href: "/en/csr", bn_href: "/bn/csr" },
+    { label: t("nav.contact"), href:"/contact", en_href: "/en/contact", bn_href: "/bn/contact" },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -95,11 +97,10 @@ const DesktopNav = () => {
         {navItems.map((item, index) => (
           <li key={index} className="relative group">
             <div className="flex items-center gap-2">
-              {/* Main label with href */}
               <Link
                 href={item.href}
                 className={`text-[16px] font-[500] ${
-                  isActive(item.href) ? "text-primary font-bold" : "text-black"
+                  isActive(item.en_href) || isActive(item.bn_href) ? "text-primary font-bold" : "text-black"
                 } hover:text-primary`}
                 onMouseEnter={() =>
                   item.dropdown && handleMouseEnter(item.dropdown)

@@ -39,7 +39,7 @@ export default function FAQ() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Banner */}
-      <div className="relative w-full h-[220px] md:h-[600px]">
+      <div className="relative w-full h-[220px] md:h-[600px] mt-[100px] md:mt-[150px]">
         <Image
           src="/images/faq.jpg"
           alt="FAQ"
@@ -54,7 +54,7 @@ export default function FAQ() {
       </div>
 
       {/* FAQ Section */}
-      <div className="container mx-auto px-6 py-10">
+      <div className="w-full md:w-[70%] px-6 py-10">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b py-4">
             <div

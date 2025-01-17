@@ -52,14 +52,11 @@ const Banner = () => {
 
   const handlePrev = () => {
     setDirection("prev");
-    setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   return (
-    <div className="relative w-full h-[300px] md:h-[70vh] overflow-hidden">
-      {/* Slides */}
+    <div className="relative w-full h-[300px] md:h-[70vh] overflow-hidden mt-[100px] md:mt-[150px]">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -76,10 +73,16 @@ const Banner = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center p-4">
+          <div
+            className={`bg-black bg-opacity-50 md:bg-opacity-70 w-full h-full md:w-[50%] md:h-[50%] flex items-center justify-center p-4 ${
+              index === currentSlide ? "animate-slide-up" : "opacity-0"
+            }`}
+          >
             <div className="text-white max-w-xl">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">{slide.title}</h1>
-              <p className="text-lg md:text-xl mb-6">{slide.subtitle}</p>
+              <h1 className="text-[24px] md:text-5xl font-bold mb-4 px-2 md:px-0">
+                {slide.title}
+              </h1>
+              <p className="text-[14px] md:text-xl mb-6 px-2 md:px-0">{slide.subtitle}</p>
               <a
                 href={slide.buttonLink}
                 className="px-6 py-3 bg-primary hover:bg-secondary text-white rounded-lg transition"
@@ -94,15 +97,15 @@ const Banner = () => {
       {/* Navigation Buttons */}
       <button
         onClick={handlePrev}
-        className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 transition z-20 text-white hover:text-primary"
+        className="flex absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 transition z-20 text-white hover:text-primary text-[20px] md:text-[30px]"
       >
-        <FaCircleArrowLeft size={30} />
+        <FaCircleArrowLeft/>
       </button>
       <button
         onClick={handleNext}
-        className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 transition z-20 text-white hover:text-primary"
+        className="flex absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 transition z-20 text-white hover:text-primary text-[20px] md:text-[30px]"
       >
-        <FaCircleArrowRight size={30} />
+        <FaCircleArrowRight/>
       </button>
     </div>
   );

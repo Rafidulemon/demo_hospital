@@ -7,7 +7,7 @@ const Footer = () => {
   const t = useTranslations();
   return (
     <footer className="bg-primary_light text-white py-12">
-      <div className="container md:mx-auto px-4 md:px-6">
+      <div className="md:container w-full w:fit md:mx-auto px-4 md:px-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="w-full col-span-2 md:col-span-1 gap-6 md:gap-0 flex flex-row md:flex-col items-center md:items-start">
             <div className="flex items-center w-[110px] h-[110px] md:w-[150px] md:h-[150px]">

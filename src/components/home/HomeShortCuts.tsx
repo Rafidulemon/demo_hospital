@@ -23,13 +23,13 @@ const HomeShortCuts = () => {
           onClick={() => router.push("/departments")}
         >
           <FaHospital size={40} />
-          <h3 className="text-xl font-bold text-center">
+          <h3 className="text-[20px] font-bold text-center">
             {t("home-short.departments")}
           </h3>
-          <p className="text-center text-sm group-hover:-mt-2">
+          <p className="text-center text-[16px] group-hover:-mt-2">
             {t("home-short.departments-details")}
           </p>
-          <button className="mt-1 text-sm bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
+          <button className="mt-1 text-[16px] bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
             {t("home-short.more")}
           </button>
         </div>
@@ -42,13 +42,13 @@ const HomeShortCuts = () => {
           onClick={() => router.push("/services")}
         >
           <FaStethoscope size={40} />
-          <h3 className="text-xl font-bold text-center">
+          <h3 className="text-[20px] font-bold text-center">
             {t("home-short.services")}
           </h3>
-          <p className="text-center text-sm group-hover:-mt-2">
+          <p className="text-center text-[16px] group-hover:-mt-2">
             {t("home-short.request-details")}
           </p>
-          <button className="mt-1 text-sm bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
+          <button className="mt-1 text-[16px] bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
             {t("home-short.more")}
           </button>
         </div>
@@ -61,13 +61,13 @@ const HomeShortCuts = () => {
           onClick={() => router.push("/doctors")}
         >
           <FaUserMd size={40} />
-          <h3 className="text-xl font-bold text-center">
+          <h3 className="text-[20px] font-bold text-center">
             {t("home-short.find")}
           </h3>
-          <p className="text-center text-sm group-hover:-mt-2">
+          <p className="text-center text-[16px] group-hover:-mt-2">
             {t("home-short.find-details")}
           </p>
-          <button className="mt-1 text-sm bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
+          <button className="mt-1 text-[16px] bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
             {t("home-short.more")}
           </button>
         </div>
@@ -81,20 +81,20 @@ const HomeShortCuts = () => {
           onClick={() => router.push("/appointment")}
         >
           <FaCalendarAlt size={40} />
-          <h3 className="text-xl font-bold text-center">
+          <h3 className="text-[20px] font-bold text-center">
             {t("home-short.request")}
           </h3>
-          <p className="text-center text-sm group-hover:-mt-2">
+          <p className="text-center text-[16px] group-hover:-mt-2">
             {t("home-short.request-details")}
           </p>
-          <button className="mt-1 text-sm bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
+          <button className="mt-1 text-[16px] bg-white text-primary px-4 py-[2px] opacity-0 group-hover:opacity-100 transition duration-1000 ease-in-out">
             {t("home-short.more")}
           </button>
         </div>
       </section>
 
-      <section className=" mt-[60px] md:hidden px-6 py-10 grid grid-cols-2">
-        <div className="flex flex-col gap-1 h-[160px] bg-[#055658] text-white justify-start items-center p-4 cursor-pointer relative group" onClick={() => router.push("/departments")}>
+      <section className="mt-[60px] md:hidden px-6 py-10 grid grid-cols-2">
+        <div className="flex flex-col gap-1 h-[150px] bg-[#055658] text-white justify-start items-center p-4 cursor-pointer relative group" onClick={() => router.push("/departments")}>
           <FaHospital size={30} />
           <h3 className="text-[16px] font-bold text-center">
             {t("home-short.departments")}
@@ -104,7 +104,7 @@ const HomeShortCuts = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-1 h-[160px] bg-primary text-white justify-start items-center p-4 cursor-pointer relative group -ml-1" onClick={() => router.push("/services")}>
+        <div className="flex flex-col gap-1 h-[150px] bg-primary text-white justify-start items-center p-4 cursor-pointer relative group -ml-1" onClick={() => router.push("/services")}>
           <FaStethoscope size={30} />
           <h3 className="text-[16px] font-bold text-center">
             {t("home-short.services")}
@@ -115,7 +115,7 @@ const HomeShortCuts = () => {
         </div>
 
         <div
-          className="flex flex-col gap-1 h-[160px] bg-[#068184] text-white justify-start items-center p-4 cursor-pointer relative group"
+          className="flex flex-col gap-1 h-[150px] bg-[#068184] text-white justify-start items-center p-4 cursor-pointer relative group"
           onClick={() => router.push("/doctors")}
         >
           <FaUserMd size={30} />
@@ -127,7 +127,7 @@ const HomeShortCuts = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-1 h-[160px] bg-[#08a7aa] text-white justify-start items-center p-4 cursor-pointer relative group -ml-1" onClick={() => router.push("/appointment")}>
+        <div className="flex flex-col gap-1 h-[150px] bg-[#08a7aa] text-white justify-start items-center p-4 cursor-pointer relative group -ml-1" onClick={() => router.push("/appointment")}>
           <FaCalendarAlt size={30} />
           <h3 className="text-[16px] font-bold text-center">
             {t("home-short.request")}

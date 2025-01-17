@@ -110,6 +110,28 @@
     "request-details": "Call us or fill in a form",
     "more": "More"
   },
+  "home": {
+    "welcome": {
+      "title": "Welcome to Our Hospital!",
+      "subtitle": "An Integrated Healthcare System with Modern Facility, Where You Live",
+      "description_1": "We are a team of highly skilled and experienced healthcare professionals dedicated to providing the highest quality care to our patients. Our clinic offers a wide range of medical services, from routine check-ups to complex surgeries. We are committed to delivering exceptional patient care and making a positive impact on the health and well-being of our community.",
+      "description_2": "Our Hospital is equipped with state-of-the-art technology and modern facilities, ensuring that our patients receive the best possible care. We are committed to providing exceptional patient care and making a positive impact on the health and well-being of our community.",
+      "description_3": "Our team of experienced healthcare professionals is dedicated to providing personalized attention and compassionate care to each patient. We strive to create a welcoming and supportive environment that makes our patients feel at ease.",
+      "appointment": "Book an Appointment",
+      "learn": "Learn More",
+      "more_about": "More about us"
+    },
+    "departments": {
+      "title": "Our Departments",
+      "subtitle": "Discover Our Medical Services",
+      "surgery": "Surgery",
+      "radiology": "Radiology",
+      "pathology": "Pathology",
+      "eqp": "Mordern Equipment",
+      "eqp_details": "Our equipment is designed to provide the best possible experience for our customers. We have a wide range of modern equipment that is designed to provide the best possible experience for our customers.",
+      "checkout": "Checkout All Departments"
+    }
+  },
   "csr": {
     "title": "Our CSR Initiatives",
     "community-title": "Community Outreach",
