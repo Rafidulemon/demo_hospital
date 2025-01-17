@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { DetailsModal } from "@/components/doctors/DoctorDetails";
+import Button from "@/components/buttons/Butotn";
 
 const DoctorsPage: React.FC = () => {
   const searchParams = useSearchParams();
@@ -15,13 +17,38 @@ const DoctorsPage: React.FC = () => {
   const [selectedDepartment, setSelectedDepartment] = useState<string>(
     categoryParam || "All"
   );
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+
+  const [selectedDoctor, setSelectedDoctor] = useState({
+    imageSrc: "",
+    name: "",
+    specialty: "",
+    degree: "",
+    designation: "",
+    details: "",
+    schedule: "",
+    address: "",
+    department: "",
+    specialties: [],
+  });
 
   const doctors = [
     {
       id: 1,
       imageSrc: "/images/doctors/1.jpg",
       name: "Dr. Alice Brown",
-      specialty: "General Physician",
+      specialties: [
+        "General Physician",
+        "Preventive Medicine",
+        "Chronic Illness Management",
+        "Health Counseling",
+        "Infectious Disease Treatment",
+        "Diabetes Management",
+        "Hypertension Management",
+        "Women's Health",
+        "Respiratory Diseases",
+        "Nutritional Guidance",
+      ],
       degree: "MBBS, MD",
       designation: "Consultant",
       details:
@@ -34,7 +61,18 @@ const DoctorsPage: React.FC = () => {
       id: 2,
       imageSrc: "/images/doctors/2.jpg",
       name: "Dr. Mark Green",
-      specialty: "Internal Medicine",
+      specialties: [
+        "Internal Medicine",
+        "Cardiovascular Diseases",
+        "Endocrinology",
+        "Gastroenterology",
+        "Pulmonology",
+        "Rheumatology",
+        "Chronic Disease Management",
+        "Infectious Diseases",
+        "Geriatric Care",
+        "Neurological Disorders",
+      ],
       degree: "MBBS, MD",
       designation: "Senior Consultant",
       details: "Specialist in internal medicine and complex diseases.",
@@ -46,7 +84,18 @@ const DoctorsPage: React.FC = () => {
       id: 3,
       imageSrc: "/images/doctors/3.jpg",
       name: "Dr. Sarah Lee",
-      specialty: "Family Physician",
+      specialties: [
+        "Family Medicine",
+        "Pediatric Care",
+        "Chronic Disease Management",
+        "Women's Health",
+        "Adolescent Health",
+        "Geriatric Care",
+        "Preventive Medicine",
+        "Lifestyle Medicine",
+        "Mental Health Support",
+        "Dermatological Care",
+      ],
       degree: "MBBS, DFM",
       designation: "Consultant",
       details: "Provides comprehensive care for patients of all ages.",
@@ -54,13 +103,22 @@ const DoctorsPage: React.FC = () => {
       address: "789 Elm Street, City",
       department: t("nav.gynae_obs"),
     },
-
-    // Surgery
     {
       id: 4,
       imageSrc: "/images/doctors/4.jpg",
       name: "Dr. John Smith",
-      specialty: "General Surgeon",
+      specialties: [
+        "General Surgery",
+        "Laparoscopic Surgery",
+        "Trauma Surgery",
+        "Oncological Surgery",
+        "Abdominal Surgery",
+        "Hernia Repairs",
+        "Endocrine Surgery",
+        "Colorectal Surgery",
+        "Emergency Surgeries",
+        "Minimally Invasive Procedures",
+      ],
       degree: "MBBS, MS",
       designation: "Consultant Surgeon",
       details: "Expert in general and laparoscopic surgeries.",
@@ -72,7 +130,18 @@ const DoctorsPage: React.FC = () => {
       id: 5,
       imageSrc: "/images/doctors/5.jpg",
       name: "Dr. Linda Wilson",
-      specialty: "Orthopedic Surgeon",
+      specialties: [
+        "Orthopedic Surgery",
+        "Joint Replacements",
+        "Sports Injuries",
+        "Arthroscopy",
+        "Spinal Surgery",
+        "Trauma Care",
+        "Bone Tumor Treatment",
+        "Fracture Management",
+        "Pediatric Orthopedics",
+        "Minimally Invasive Orthopedic Surgery",
+      ],
       degree: "MBBS, MS (Ortho)",
       designation: "Senior Surgeon",
       details: "Specialist in bone and joint surgeries.",
@@ -84,7 +153,18 @@ const DoctorsPage: React.FC = () => {
       id: 6,
       imageSrc: "/images/doctors/6.jpg",
       name: "Dr. Michael Davis",
-      specialty: "Neurosurgeon",
+      specialties: [
+        "Neurosurgery",
+        "Brain Tumor Surgery",
+        "Spinal Cord Surgeries",
+        "Cerebrovascular Surgeries",
+        "Traumatic Brain Injury Treatment",
+        "Neuro-Oncology",
+        "Pediatric Neurosurgery",
+        "Epilepsy Surgery",
+        "Minimally Invasive Neurosurgery",
+        "Complex Spine Surgeries",
+      ],
       degree: "MBBS, MCh (Neuro)",
       designation: "Consultant",
       details: "Specializes in brain and spinal surgeries.",
@@ -96,7 +176,18 @@ const DoctorsPage: React.FC = () => {
       id: 7,
       imageSrc: "/images/doctors/4.jpg",
       name: "Dr. Emma Brown",
-      specialty: "Pediatrician",
+      specialties: [
+        "Pediatrics",
+        "Vaccination Programs",
+        "Growth and Development Assessment",
+        "Infectious Diseases in Children",
+        "Adolescent Health",
+        "Pediatric Nutrition",
+        "Chronic Illnesses in Children",
+        "Behavioral Disorders",
+        "Pediatric Dermatology",
+        "Emergency Pediatric Care",
+      ],
       degree: "MBBS, DCH",
       designation: "Consultant",
       details: "Specialist in child healthcare and development.",
@@ -108,7 +199,18 @@ const DoctorsPage: React.FC = () => {
       id: 8,
       imageSrc: "/images/doctors/5.jpg",
       name: "Dr. Olivia Johnson",
-      specialty: "Neonatologist",
+      specialties: [
+        "Neonatology",
+        "Premature Baby Care",
+        "NICU Management",
+        "Neonatal Respiratory Support",
+        "Jaundice Treatment in Newborns",
+        "Birth Defect Management",
+        "Neonatal Nutrition",
+        "Congenital Infections",
+        "High-Risk Neonatology",
+        "Neonatal Neurology",
+      ],
       degree: "MBBS, MD (Pediatrics)",
       designation: "Senior Consultant",
       details: "Specializes in care for newborns and preterm babies.",
@@ -120,7 +222,18 @@ const DoctorsPage: React.FC = () => {
       id: 9,
       imageSrc: "/images/doctors/3.jpg",
       name: "Dr. Ethan Williams",
-      specialty: "Pediatric Surgeon",
+      specialties: [
+        "Pediatric Surgery",
+        "Congenital Anomalies",
+        "Neonatal Surgeries",
+        "Hernia Repairs in Children",
+        "Tumor Surgeries in Pediatrics",
+        "Emergency Pediatric Surgeries",
+        "Minimally Invasive Pediatric Surgery",
+        "Gastrointestinal Pediatric Surgeries",
+        "Urological Surgeries in Children",
+        "Airway and Lung Surgeries",
+      ],
       degree: "MBBS, MCh (Pediatrics)",
       designation: "Consultant Surgeon",
       details: "Expert in pediatric surgeries and congenital anomalies.",
@@ -128,12 +241,22 @@ const DoctorsPage: React.FC = () => {
       address: "606 Walnut Lane, City",
       department: t("nav.paediatric_surgery"),
     },
-
     {
       id: 10,
       imageSrc: "/images/doctors/1.jpg",
       name: "Dr. Thomas Miller",
-      specialty: "Cardiologist",
+      specialties: [
+        "Cardiology",
+        "Heart Disease Prevention",
+        "Hypertension Treatment",
+        "Arrhythmia Management",
+        "Cardiac Imaging",
+        "Interventional Cardiology",
+        "Heart Failure Management",
+        "Post-Heart Surgery Care",
+        "Preventive Cardiology",
+        "Cholesterol Management",
+      ],
       degree: "MBBS, MD (Cardiology)",
       designation: "Senior Consultant",
       details: "Specializes in heart health and cardiac diagnostics.",
@@ -145,7 +268,18 @@ const DoctorsPage: React.FC = () => {
       id: 11,
       imageSrc: "/images/doctors/2.jpg",
       name: "Dr. Isabella Martinez",
-      specialty: "Interventional Cardiologist",
+      specialties: [
+        "Interventional Cardiology",
+        "Angioplasty",
+        "Stent Placements",
+        "Heart Failure Treatment",
+        "Pacemaker Implantation",
+        "Peripheral Artery Disease Management",
+        "Cholesterol Management",
+        "Hypertension Control",
+        "Cardiac Catheterization",
+        "Valve Repair",
+      ],
       degree: "MBBS, DM (Cardiology)",
       designation: "Consultant",
       details: "Expert in minimally invasive cardiac procedures.",
@@ -157,7 +291,18 @@ const DoctorsPage: React.FC = () => {
       id: 12,
       imageSrc: "/images/doctors/3.jpg",
       name: "Dr. James Taylor",
-      specialty: "Electrophysiologist",
+      specialties: [
+        "Electrophysiology",
+        "Cardiac Rhythm Disorders",
+        "Atrial Fibrillation Treatment",
+        "Pacemaker Implantation",
+        "Defibrillator Implantation",
+        "Arrhythmia Management",
+        "Heart Block Treatment",
+        "Syncope Diagnosis",
+        "Electrocardiography",
+        "Tachycardia Treatment",
+      ],
       degree: "MBBS, MD (Cardiology)",
       designation: "Consultant",
       details: "Specialist in cardiac rhythm disorders.",
@@ -169,7 +314,18 @@ const DoctorsPage: React.FC = () => {
       id: 13,
       imageSrc: "/images/doctors/1.jpg",
       name: "Dr. David Walker",
-      specialty: "ENT Specialist",
+      specialties: [
+        "ENT Surgery",
+        "Sinus Surgery",
+        "Tonsillectomy",
+        "Hearing Loss Treatment",
+        "Speech Disorders",
+        "Allergy Management",
+        "Thyroid Surgery",
+        "Head and Neck Cancer Treatment",
+        "Voice Therapy",
+        "Vertigo Treatment",
+      ],
       degree: "MBBS, MS (ENT)",
       designation: "Consultant",
       details: "Expert in ear, nose, and throat treatments.",
@@ -181,7 +337,18 @@ const DoctorsPage: React.FC = () => {
       id: 14,
       imageSrc: "/images/doctors/2.jpg",
       name: "Dr. Emily Harris",
-      specialty: "Otologist",
+      specialties: [
+        "Otology",
+        "Hearing Disorders",
+        "Tinnitus Management",
+        "Cochlear Implant Surgery",
+        "Ear Infections",
+        "Balance Disorders",
+        "Otosclerosis Treatment",
+        "Eustachian Tube Dysfunction",
+        "Pediatric ENT Disorders",
+        "Ear Drum Perforation Treatment",
+      ],
       degree: "MBBS, DLO",
       designation: "Consultant",
       details: "Specialist in hearing and balance disorders.",
@@ -193,7 +360,18 @@ const DoctorsPage: React.FC = () => {
       id: 15,
       imageSrc: "/images/doctors/3.jpg",
       name: "Dr. Lucas White",
-      specialty: "Rhinologist",
+      specialties: [
+        "Rhinology",
+        "Chronic Sinusitis Treatment",
+        "Nasal Polyp Removal",
+        "Deviated Septum Surgery",
+        "Nasal Trauma Repair",
+        "Endoscopic Sinus Surgery",
+        "Smell Disorders",
+        "Allergic Rhinitis",
+        "Nasal Tumor Treatment",
+        "Airway Reconstruction",
+      ],
       degree: "MBBS, MS (ENT)",
       designation: "Consultant",
       details: "Specializes in nasal and sinus disorders.",
@@ -205,7 +383,18 @@ const DoctorsPage: React.FC = () => {
       id: 16,
       imageSrc: "/images/doctors/1.jpg",
       name: "Dr. Chloe Moore",
-      specialty: "Dermatologist",
+      specialties: [
+        "General Dermatology",
+        "Cosmetic Dermatology",
+        "Acne Treatment",
+        "Eczema Management",
+        "Psoriasis Treatment",
+        "Skin Cancer Diagnosis",
+        "Mole Removal",
+        "Botox Procedures",
+        "Laser Skin Treatments",
+        "Hair and Nail Disorders",
+      ],
       degree: "MBBS, MD (Dermatology)",
       designation: "Consultant",
       details: "Specialist in skin diseases and cosmetic procedures.",
@@ -217,7 +406,18 @@ const DoctorsPage: React.FC = () => {
       id: 17,
       imageSrc: "/images/doctors/2.jpg",
       name: "Dr. Ava Thomas",
-      specialty: "Cosmetic Dermatologist",
+      specialties: [
+        "Cosmetic Dermatology",
+        "Anti-Aging Treatments",
+        "Chemical Peels",
+        "Laser Hair Removal",
+        "Scar Revision",
+        "Stretch Mark Treatments",
+        "Skin Rejuvenation",
+        "Facial Contouring",
+        "Hyperpigmentation Treatment",
+        "Dermal Fillers",
+      ],
       degree: "MBBS, MD",
       designation: "Consultant",
       details: "Expert in aesthetic treatments and skin rejuvenation.",
@@ -229,7 +429,18 @@ const DoctorsPage: React.FC = () => {
       id: 18,
       imageSrc: "/images/doctors/6.jpg",
       name: "Dr. William Johnson",
-      specialty: "Venereologist",
+      specialties: [
+        "Venereology",
+        "Sexually Transmitted Diseases",
+        "HIV Management",
+        "Genital Skin Disorders",
+        "HPV Treatment",
+        "Syphilis Diagnosis",
+        "Chronic Urethritis",
+        "Genital Lesions",
+        "Herpes Treatment",
+        "Preventive Sexual Health Counseling",
+      ],
       degree: "MBBS, MD",
       designation: "Consultant",
       details:
@@ -237,6 +448,52 @@ const DoctorsPage: React.FC = () => {
       schedule: "Wed - Sun (11:00 AM - 2:00 PM)",
       address: "1515 Birch Avenue, City",
       department: t("nav.skin_vd"),
+    },
+    {
+      id: 19,
+      imageSrc: "/images/doctors/1.jpg",
+      name: "Dr. Richard Brown",
+      specialties: [
+        "General Medicine",
+        "Diabetes Care",
+        "Hypertension Control",
+        "Infectious Diseases",
+        "Lifestyle Medicine",
+        "Nutritional Therapy",
+        "Weight Management",
+        "Asthma Management",
+        "Preventive Health Checkups",
+        "Vaccination Programs",
+      ],
+      degree: "MBBS, MD",
+      designation: "Consultant",
+      details: "Focuses on comprehensive and preventive healthcare.",
+      schedule: "Mon - Sat (9:00 AM - 12:00 PM)",
+      address: "1616 Maple Drive, City",
+      department: t("nav.medicine"),
+    },
+    {
+      id: 20,
+      imageSrc: "/images/doctors/2.jpg",
+      name: "Dr. Sophia Wilson",
+      specialties: [
+        "Gynecology",
+        "High-Risk Pregnancy",
+        "Infertility Treatment",
+        "Menstrual Disorders",
+        "PCOS Management",
+        "Pelvic Pain Diagnosis",
+        "Gynecological Surgeries",
+        "Contraceptive Counseling",
+        "Menopause Management",
+        "Uterine Fibroid Treatment",
+      ],
+      degree: "MBBS, MD (Gynecology)",
+      designation: "Senior Consultant",
+      details: "Expert in women's health and reproductive care.",
+      schedule: "Mon - Fri (10:00 AM - 1:00 PM)",
+      address: "1717 Cedar Lane, City",
+      department: t("nav.gynae_obs"),
     },
   ];
 
@@ -302,7 +559,6 @@ const DoctorsPage: React.FC = () => {
   const categories = allDepartments.map(
     (department) => departmentTranslationMap[department] || department
   );
-  console.log(categories)
 
   const filteredDoctors =
     selectedDepartment === "All"
@@ -311,13 +567,18 @@ const DoctorsPage: React.FC = () => {
 
   const handleDepartmentClick = (department: string) => {
     setSelectedDepartment(department);
-    console.log(department);
     if (department === "All") {
       router.push("/doctors");
     } else {
       router.push(`doctors?category=${department}`);
       router.replace(`/doctors`);
     }
+  };
+
+  const handleDoctorClick = (doctor: any) => {
+    setSelectedDoctor(doctor);
+    console.log(doctor);
+    setIsDetailsModalOpen(true);
   };
 
   useEffect(() => {
@@ -336,11 +597,13 @@ const DoctorsPage: React.FC = () => {
           className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <h1 className="text-white text-[24px] md:text-[48px] font-bold">Our Expert Doctors</h1>
+          <div className="text-white w-full text-center text-[24px] md:text-[48px] font-bold">
+            {t("doctors.title")}
+          </div>
         </div>
       </div>
 
-      <div className="p-6 w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4 mb-12">
+      <div className="p-4 md:p-6 w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4 mb-12">
         <button
           className={`px-2 py-1 md:py-2 md:px-4 rounded-lg shadow-md transition-all ${
             selectedDepartment === "All"
@@ -367,10 +630,14 @@ const DoctorsPage: React.FC = () => {
         ))}
       </div>
 
-      <div className="p-6 w-full flex flex-col justify-center items-center grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="p-4 md:p-6 w-full flex flex-col justify-center items-center grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredDoctors.length > 0 ? (
           filteredDoctors.map((doctor) => (
-            <div className="w-full flex flex-row justify-center" key={doctor.id}>
+            <div
+              className="w-full flex flex-row justify-center"
+              key={doctor.id}
+              onClick={() => handleDoctorClick(doctor)}
+            >
               <DoctorCard
                 key={doctor.id}
                 imageSrc={doctor.imageSrc}
@@ -390,6 +657,81 @@ const DoctorsPage: React.FC = () => {
           </div>
         )}
       </div>
+      <DetailsModal
+        open={isDetailsModalOpen}
+        setOpen={setIsDetailsModalOpen}
+        className="w-full h-screen overflow-y-auto"
+      >
+        {selectedDoctor && (
+          <div className="w-full h-full flex flex-col justify-center items-center text-white p-4 md:p-8">
+            <div className="w-full md:w-[80%] lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Doctor's Image */}
+              <div className="flex justify-center items-center">
+                <Image
+                  src={selectedDoctor.imageSrc}
+                  alt={selectedDoctor.name}
+                  width={300}
+                  height={300}
+                  className="object-cover w-[150px] h-[150px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] rounded-full"
+                />
+              </div>
+
+              {/* Doctor's Information */}
+              <div className="flex flex-col justify-start items-start">
+                <span className="text-[24px] md:text-[30px] lg:text-[40px] font-semibold">
+                  {selectedDoctor.name}
+                </span>
+                <span className="text-[20px] md:text-[24px] lg:text-[30px] font-[500]">
+                  {selectedDoctor.degree}
+                </span>
+                <span className="text-[18px] md:text-[22px] lg:text-[24px] font-[500] mt-4">
+                  {selectedDoctor.designation}
+                </span>
+                <span className="text-[18px] md:text-[22px] lg:text-[24px] font-[500]">
+                  {selectedDoctor.department}
+                </span>
+                <span className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] font-[500] mt-4">
+                  {selectedDoctor.details}
+                </span>
+                <span className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] font-[500]">
+                  Time: {selectedDoctor.schedule}
+                </span>
+                <span className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] font-[500]">
+                  Location: {selectedDoctor.address}
+                </span>
+                <span className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] font-[500]">
+                  Serial: Call our hotline
+                </span>
+
+                {/* Specialties */}
+                <span className="text-gray-200 text-[18px] md:text-[22px] lg:text-[30px] font-[500] mt-6">
+                  Specialities:
+                </span>
+                <span className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] font-[500]">
+                  {selectedDoctor.specialties?.length > 0
+                    ? selectedDoctor.specialties.map((speciality, index) => (
+                        <span key={index}>
+                          {speciality}
+                          {index < selectedDoctor.specialties.length - 1
+                            ? ", "
+                            : ""}
+                        </span>
+                      ))
+                    : "No specialities available"}
+                </span>
+
+                {/* Book Appointment Button */}
+                <div
+                  onClick={() => setIsDetailsModalOpen(false)}
+                  className="bg-white text-primary rounded-lg shadow-xl px-4 py-2 cursor-pointer mt-6 text-[16px] md:text-[18px] lg:text-[20px]"
+                >
+                  Book an Appointment
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </DetailsModal>
     </div>
   );
 };

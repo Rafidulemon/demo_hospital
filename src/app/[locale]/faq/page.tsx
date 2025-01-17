@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import Image from "next/image";
 
 export default function FAQ() {
   const t = useTranslations("faq");
@@ -38,8 +39,18 @@ export default function FAQ() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Banner */}
-      <div className="w-full h-[300px] bg-primary flex items-center justify-center text-white text-4xl font-bold">
-        {t("title")}
+      <div className="relative w-full h-[220px] md:h-[600px]">
+        <Image
+          src="/images/faq.jpg"
+          alt="FAQ"
+          layout="fill"
+          className="absolute inset-0 w-full h-full"
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+          <h1 className="text-white text-[24px] md:text-[48px] font-bold">
+            {t("title")}
+          </h1>
+        </div>
       </div>
 
       {/* FAQ Section */}

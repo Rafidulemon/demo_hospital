@@ -124,20 +124,21 @@ const MobileNav = () => {
                         ? "text-primary font-bold"
                         : "text-black"
                     } hover:text-primary`}
+                    onClick={toggleMobileMenu}
                   >
                     {item.label}
                   </Link>
                 ) : (
                   <div>
                     <button
-                      onClick={() => handleDropdownToggle(item.dropdown!)}
+                      
                       className="flex items-center gap-2 text-[16px] font-[500] hover:text-primary"
                     >
                       {item.label}{" "}
                       {openDropdown === item.dropdown ? (
-                        <FaChevronUp className="text-primary" />
+                        <FaChevronUp className="text-primary" onClick={() => handleDropdownToggle(item.dropdown!)}/>
                       ) : (
-                        <FaChevronDown />
+                        <FaChevronDown onClick={() => handleDropdownToggle(item.dropdown!)}/>
                       )}
                     </button>
                     <ul
@@ -154,6 +155,7 @@ const MobileNav = () => {
                             href={`/doctors?category=${encodeURIComponent(
                               subItem
                             )}`}
+                            onClick={toggleMobileMenu}
                           >
                             {subItem}
                           </Link>

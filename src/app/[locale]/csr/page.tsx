@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function CSR() {
   const t = useTranslations("csr");
@@ -7,8 +8,18 @@ export default function CSR() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Banner */}
-      <div className="w-full h-[300px] bg-primary flex items-center justify-center text-white text-4xl font-bold">
-        {t("title")}
+      <div className="relative w-full h-[220px] md:h-[600px]">
+        <Image
+          src="/images/csr.jpg"
+          alt="CSR"
+          layout="fill"
+          className="absolute inset-0 w-full h-full"
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+          <div className="text-white w-full text-center text-[24px] md:text-[48px] font-bold">
+            {t("title")}
+          </div>
+        </div>
       </div>
 
       {/* Main Content */}
@@ -21,7 +32,9 @@ export default function CSR() {
             className="w-full md:w-1/2 rounded-md shadow-md"
           />
           <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold text-primary">{t("community-title")}</h2>
+            <h2 className="text-2xl font-bold text-primary">
+              {t("community-title")}
+            </h2>
             <p className="text-gray-600">{t("community-description")}</p>
           </div>
         </div>
@@ -34,7 +47,9 @@ export default function CSR() {
             className="w-full md:w-1/2 rounded-md shadow-md"
           />
           <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold text-primary">{t("education-title")}</h2>
+            <h2 className="text-2xl font-bold text-primary">
+              {t("education-title")}
+            </h2>
             <p className="text-gray-600">{t("education-description")}</p>
           </div>
         </div>
@@ -47,7 +62,9 @@ export default function CSR() {
             className="w-full md:w-1/2 rounded-md shadow-md"
           />
           <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold text-primary">{t("environment-title")}</h2>
+            <h2 className="text-2xl font-bold text-primary">
+              {t("environment-title")}
+            </h2>
             <p className="text-gray-600">{t("environment-description")}</p>
           </div>
         </div>
@@ -60,15 +77,21 @@ export default function CSR() {
             className="w-full md:w-1/2 rounded-md shadow-md"
           />
           <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold text-primary">{t("disaster-title")}</h2>
+            <h2 className="text-2xl font-bold text-primary">
+              {t("disaster-title")}
+            </h2>
             <p className="text-gray-600">{t("disaster-description")}</p>
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="w-full flex flex-col items-center bg-gray-100 py-10 rounded-md shadow-md">
-          <h3 className="text-2xl font-bold text-primary mb-4">{t("cta-title")}</h3>
-          <p className="text-gray-600 text-center max-w-2xl">{t("cta-description")}</p>
+          <h3 className="text-2xl font-bold text-primary mb-4">
+            {t("cta-title")}
+          </h3>
+          <p className="text-gray-600 text-center max-w-2xl">
+            {t("cta-description")}
+          </p>
           <button className="mt-6 px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition">
             {t("cta-button")}
           </button>

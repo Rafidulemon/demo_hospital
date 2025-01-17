@@ -29,17 +29,23 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="w-full p-6 md:p-10 flex flex-col items-center bg-gray-50">
-      {/* Page Title */}
-      <h1 className="text-xl md:text-3xl font-bold text-primary mb-2 md:mb-6">
-        {t("title")}
-      </h1>
-      <p className="text-[12px] md:text-[16px] text-gray-600 mb-6 md:mb-10 text-center">
-        {t("description")}
-      </p>
+    <div className="w-full flex flex-col items-center bg-gray-50">
+      <div className="relative w-full h-[220px] md:h-[600px]">
+        <Image
+          src="/images/contact.jpg"
+          alt="Contact"
+          layout="fill"
+          className="absolute inset-0 w-full h-full"
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+          <div className="text-white w-full text-center text-[24px] md:text-[48px] font-bold">
+              {t("title")}
+          </div>
+        </div>
+      </div>
 
       {/* Contact Details Section */}
-      <div className="w-full grid grid-cols-3 gap-3 md:gap-8 mb-12">
+      <div className="p-6 md:p-10 w-full grid grid-cols-3 gap-3 md:gap-8 mb-12">
         {/* Emergency Contact */}
         <div className="bg-gray-100 shadow-md rounded-lg p-6 flex flex-col justify-start md:justify-center items-center hover:bg-primary group hover:text-white">
           <div className="group-hover:text-white text-primary text-xl md:text-4xl mb-4">
@@ -90,7 +96,7 @@ const ContactPage = () => {
       </div>
 
       {/* Contact Form */}
-      <div className="bg-white shadow-md rounded-lg p-10 w-full">
+      <div className="p-6 md:p-10 bg-white shadow-md rounded-lg p-10 w-full">
         <div className="w-full flex flex-col md:flex-row justify-center items-center gap-10">
           <div className="w-[125px] h-[250px] md:w-[300px] md:h-[600px]">
             <img
@@ -226,7 +232,7 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <div className="w-full mt-12">
+      <div className="p-6 md:p-10 w-full mt-12">
         <h2 className="text-xl font-bold mb-4 text-primary">
           {t("map.title")}
         </h2>
