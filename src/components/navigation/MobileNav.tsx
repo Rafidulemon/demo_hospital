@@ -15,6 +15,7 @@ const MobileNav = () => {
   const dropdownItems: {
     about: string[];
     services: string[];
+    departments: string[];
     doctors: string[];
   } = {
     about: [
@@ -58,21 +59,34 @@ const MobileNav = () => {
       t("nav.dental"),
       t("nav.skin_vd"),
     ],
+    departments: [
+      t("nav.cardiology"),
+      t("nav.neurology"),
+      t("nav.diagnostic"),
+      t("nav.orthopedics"),
+      t("nav.pediatrics"),
+      t("nav.gynecology"),
+      t("nav.obstetrics"),
+    ],
   };
   type DropdownKey = keyof typeof dropdownItems;
   const navItems: {
     label: string;
     href?: string;
+    en_href: string;
+    bn_href: string;
     ref?: string;
     dropdown?: DropdownKey;
   }[] = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.about"), ref: "/about", dropdown: "about" },
-    { label: t("nav.service"), ref: "/services", dropdown: "services" },
-    { label: t("nav.doctors"), ref: "/doctors", dropdown: "doctors" },
-    { label: t("nav.faq"), href: "/faq" },
-    { label: t("nav.csr"), href: "/csr" },
-    { label: t("nav.contact"), href: "/contact" },
+    { label: t("nav.home"), href:"/", en_href: "/en", bn_href: "/bn" },
+    { label: t("nav.about"), ref:"/about", en_href: "/en/about", bn_href: "/bn/about", dropdown: "about" },
+    { label: t("nav.department"), ref:"/departments", en_href: "/en/departments", bn_href: "/bn/departments", dropdown: "departments" },
+    { label: t("nav.service"), ref:"/services", en_href: "/en/services", bn_href: "/bn/services", dropdown: "services" },
+    { label: t("nav.doctors"), ref:"/doctors", en_href: "/en/doctors", bn_href: "/bn/doctors", dropdown: "doctors" },
+    { label: t("nav.news"), href: "/news", en_href: "/en/news", bn_href: "/bn/news" },
+    { label: t("nav.faq"), href:"/faq", en_href: "/en/faq", bn_href: "/bn/faq" },
+    { label: t("nav.csr"), href:"/csr", en_href: "/en/csr", bn_href: "/bn/csr" },
+    { label: t("nav.contact"), href:"/contact", en_href: "/en/contact", bn_href: "/bn/contact" },
   ];
   const isActive = (path: string) => pathname === path;
   const handleDropdownToggle = (menu: string) => {
@@ -114,7 +128,7 @@ const MobileNav = () => {
                   <Link
                     href={item.href}
                     className={`text-[16px] font-[500] ${
-                      isActive(item.href)
+                      isActive(item.en_href) || isActive(item.bn_href)
                         ? "text-primary font-bold"
                         : "text-black"
                     } hover:text-primary`}
@@ -124,7 +138,7 @@ const MobileNav = () => {
                   </Link>
                 ) : (
                   <div>
-                    <button className="flex items-center gap-2 text-[16px] font-[500] hover:text-primary">
+                    <button className={`flex items-center gap-2 text-[16px] font-[500] hover:text-primary ${isActive(item.en_href) || isActive(item.bn_href) ? "text-primary font-bold" : ""}`}>
                       <Link href={item.ref!} onClick={toggleMobileMenu}>{item.label}{" "} </Link>
                       {openDropdown === item.dropdown ? (
                         <FaChevronUp

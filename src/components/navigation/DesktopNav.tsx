@@ -12,6 +12,7 @@ const DesktopNav = () => {
   const dropdownItems: {
     about: string[];
     services: string[];
+    departments: string[];
     doctors: string[];
   } = {
     about: [
@@ -21,6 +22,15 @@ const DesktopNav = () => {
       t("nav.mission"),
     ],
     services: [
+      t("nav.cardiology"),
+      t("nav.neurology"),
+      t("nav.diagnostic"),
+      t("nav.orthopedics"),
+      t("nav.pediatrics"),
+      t("nav.gynecology"),
+      t("nav.obstetrics"),
+    ],
+    departments: [
       t("nav.cardiology"),
       t("nav.neurology"),
       t("nav.diagnostic"),
@@ -68,8 +78,10 @@ const DesktopNav = () => {
   }[] = [
     { label: t("nav.home"), href:"/", en_href: "/en", bn_href: "/bn" },
     { label: t("nav.about"), href:"/about", en_href: "/en/about", bn_href: "/bn/about", dropdown: "about" },
+    { label: t("nav.department"), href:"/departments", en_href: "/en/departments", bn_href: "/bn/departments", dropdown: "departments" },
     { label: t("nav.service"), href:"/services", en_href: "/en/services", bn_href: "/bn/services", dropdown: "services" },
     { label: t("nav.doctors"), href:"/doctors", en_href: "/en/doctors", bn_href: "/bn/doctors", dropdown: "doctors" },
+    { label: t("nav.news"), href: "/news", en_href: "/en/news", bn_href: "/bn/news" },
     { label: t("nav.faq"), href:"/faq", en_href: "/en/faq", bn_href: "/bn/faq" },
     { label: t("nav.csr"), href:"/csr", en_href: "/en/csr", bn_href: "/bn/csr" },
     { label: t("nav.contact"), href:"/contact", en_href: "/en/contact", bn_href: "/bn/contact" },

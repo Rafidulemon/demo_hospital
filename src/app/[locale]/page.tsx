@@ -2,6 +2,7 @@ import Banner from "@/components/home/Banner";
 import Departments from "@/components/home/Departments";
 import Doctors from "@/components/home/Doctors";
 import HomeShortCuts from "@/components/home/HomeShortCuts";
+import News from "@/components/home/News";
 import Welcome from "@/components/home/Welcome";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
       <Welcome />
       <Doctors />
       <Departments/>
-      <div className="w-full h-[100px]"></div>
+      <News/>
     </div>
   );
 }

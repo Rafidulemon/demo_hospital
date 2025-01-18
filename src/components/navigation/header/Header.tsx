@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 bg-white w-full flex flex-col gap-0">
       <div className="w-full lg:w-[80%] mx-auto px-4 flex flex-row items-center justify-between">
-        <div className="flex items-center gap-4 w-[60px] h-[55px] md:w-[120px] md:h-[109px]">
+        <div className="flex items-center gap-4 w-[60px] h-[55px] md:w-[120px] md:h-[109px]" onClick={() => router.push("/")}>
           <Image
             src="/logo/logo.png"
             alt="Patiya General Hospital"
@@ -39,8 +39,8 @@ export default function Header() {
             <span className="text-black text-[12px] md:text-[14px] font-medium">
               {t("header.emergency")}
             </span>
-            <div className="group cursor-pointer hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
-              <FaPhoneAlt className="text-primary group-hover:text-white" />
+            <div className="group cursor-pointer text-[10px] md:text-[16px] hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
+              <FaPhoneAlt className="text-primary group-hover:text-white"/>
               <span className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white">
                 12345
               </span>
@@ -51,7 +51,7 @@ export default function Header() {
             <span className="text-black text-[12px] md:text-[14px] font-medium">
               {t("header.lifeline")}
             </span>
-            <div className="group cursor-pointer hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
+            <div className="group cursor-pointer text-[10px] md:text-[16px] hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
               <FaPhoneAlt className="text-primary group-hover:text-white" />
               <span className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white">
                 +8801365412345
@@ -82,7 +82,7 @@ export default function Header() {
             </button>
           </div>
         </div>
-        <div className="md:hidden flex items-center justify-center ml-2 md:ml-10">
+        <div className="md:hidden flex items-center justify-center md:ml-10">
           <button
             onClick={() => changeLanguageHandler("en")}
             className={`px-2 py-1 text-[12px] font-medium rounded-l-sm transition-all duration-200 focus:outline-none ${
@@ -101,7 +101,7 @@ export default function Header() {
                 : "bg-gray-100 text-primary"
             }`}
           >
-            BN
+            বাং
           </button>
         </div>
       </div>

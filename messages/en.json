@@ -10,7 +10,9 @@
     "home": "Home",
     "about": "About",
     "service": "Range of Service",
+    "department": "Departments",
     "doctors": "Doctors",
+    "news": "News",
     "csr": "CSR",
     "faq": "FAQ",
     "contact": "Contact Us",
@@ -135,6 +137,12 @@
       "title": "Meet Our Doctors",
       "subtitle": "Experienced and dedicated professionals at your service.",
       "all": "See All Doctors"
+    },
+    "news": {
+      "title": "Latest News",
+      "subtitle": "Stay Updated with Our Latest News",
+      "all": "See All News",
+      "read": "Read More"
     }
   },
   "csr": {
