@@ -130,6 +130,11 @@
       "eqp": "Mordern Equipment",
       "eqp_details": "Our equipment is designed to provide the best possible experience for our customers. We have a wide range of modern equipment that is designed to provide the best possible experience for our customers.",
       "checkout": "Checkout All Departments"
+    },
+    "home_doctors": {
+      "title": "Meet Our Doctors",
+      "subtitle": "Experienced and dedicated professionals at your service.",
+      "all": "See All Doctors"
     }
   },
   "csr": {

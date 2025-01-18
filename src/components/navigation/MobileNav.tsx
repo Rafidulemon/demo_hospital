@@ -1,16 +1,17 @@
+"use client"
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaTimes, FaChevronUp, FaChevronDown, FaBars } from "react-icons/fa";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-
+import { useRouter } from "next/navigation";
 const MobileNav = () => {
   const t = useTranslations();
   const pathname = usePathname();
+  const router = useRouter();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const dropdownItems: {
     about: string[];
     services: string[];
@@ -58,41 +59,33 @@ const MobileNav = () => {
       t("nav.skin_vd"),
     ],
   };
-
   type DropdownKey = keyof typeof dropdownItems;
-
   const navItems: {
     label: string;
-    href: string;
-    en_href: string;
-    bn_href: string;
+    href?: string;
+    ref?: string;
     dropdown?: DropdownKey;
   }[] = [
-    { label: t("nav.home"), href:"/", en_href: "/en", bn_href: "/bn" },
-    { label: t("nav.about"), href:"/about", en_href: "/en/about", bn_href: "/bn/about", dropdown: "about" },
-    { label: t("nav.service"), href:"/services", en_href: "/en/services", bn_href: "/bn/services", dropdown: "services" },
-    { label: t("nav.doctors"), href:"/doctors", en_href: "/en/doctors", bn_href: "/bn/doctors", dropdown: "doctors" },
-    { label: t("nav.faq"), href:"/faq", en_href: "/en/faq", bn_href: "/bn/faq" },
-    { label: t("nav.csr"), href:"/csr", en_href: "/en/csr", bn_href: "/bn/csr" },
-    { label: t("nav.contact"), href:"/contact", en_href: "/en/contact", bn_href: "/bn/contact" },
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), ref: "/about", dropdown: "about" },
+    { label: t("nav.service"), ref: "/services", dropdown: "services" },
+    { label: t("nav.doctors"), ref: "/doctors", dropdown: "doctors" },
+    { label: t("nav.faq"), href: "/faq" },
+    { label: t("nav.csr"), href: "/csr" },
+    { label: t("nav.contact"), href: "/contact" },
   ];
-
   const isActive = (path: string) => pathname === path;
-
   const handleDropdownToggle = (menu: string) => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
-
   return (
     <div className="w-full">
       <div className="md:hidden text-primary" onClick={toggleMobileMenu}>
         <FaBars />
       </div>
-
       <div
         className={`fixed top-0 right-0 w-[250px] h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -104,7 +97,6 @@ const MobileNav = () => {
         >
           <FaTimes />
         </div>
-
         <nav className="md:hidden">
           <div className="px-4 mb-2">
             <Image
@@ -122,7 +114,7 @@ const MobileNav = () => {
                   <Link
                     href={item.href}
                     className={`text-[16px] font-[500] ${
-                      isActive(item.en_href) || isActive(item.bn_href)
+                      isActive(item.href)
                         ? "text-primary font-bold"
                         : "text-black"
                     } hover:text-primary`}
@@ -132,15 +124,17 @@ const MobileNav = () => {
                   </Link>
                 ) : (
                   <div>
-                    <button
-                      
-                      className="flex items-center gap-2 text-[16px] font-[500] hover:text-primary"
-                    >
-                      {item.label}{" "}
+                    <button className="flex items-center gap-2 text-[16px] font-[500] hover:text-primary">
+                      <Link href={item.ref!} onClick={toggleMobileMenu}>{item.label}{" "} </Link>
                       {openDropdown === item.dropdown ? (
-                        <FaChevronUp className="text-primary" onClick={() => handleDropdownToggle(item.dropdown!)}/>
+                        <FaChevronUp
+                          className="text-primary"
+                          onClick={() => handleDropdownToggle(item.dropdown!)}
+                        />
                       ) : (
-                        <FaChevronDown onClick={() => handleDropdownToggle(item.dropdown!)}/>
+                        <FaChevronDown
+                          onClick={() => handleDropdownToggle(item.dropdown!)}
+                        />
                       )}
                     </button>
                     <ul
@@ -174,5 +168,4 @@ const MobileNav = () => {
     </div>
   );
 };
-
 export default MobileNav;
