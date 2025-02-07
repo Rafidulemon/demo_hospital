@@ -92,7 +92,7 @@ const Footer = () => {
             <div className="w-full h-40">
               <iframe
                 title={t("footer.location.title")}
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.8278657298845!2d90.40204921543524!3d23.79564059295706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70bdff8f8f5%3A0xe3d29b979b1e9dcf!2sYour%20Company%20Location!5e0!3m2!1sen!2sbd!4v1234567890123!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7383.147591326703!2d91.97143444477177!3d22.294129095631416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad2331c6f36953%3A0x39e7d85c5dae2a98!2sPatiya!5e0!3m2!1sen!2sbd!4v1738920409560!5m2!1sen!2sbd"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

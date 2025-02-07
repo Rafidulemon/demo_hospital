@@ -9,79 +9,91 @@ import {
   HeartPulse,
   Smile,
   LifeBuoy,
-} from "lucide-react";
-import {
   Heart,
   Award,
   Lightbulb,
   ShieldCheck,
   Star,
   Cross,
-} from "lucide-react";
-
-import {
   Brain,
   Bone,
   Baby,
-  Stethoscope,
-  Radiation,
   Ear,
-  BrainCircuit,
   Sun,
+  Pill,
 } from "lucide-react";
-import { FaTooth } from "react-icons/fa";
-import { GiKidneys } from "react-icons/gi";
+import { FaTooth, FaHandPointRight } from "react-icons/fa";
 import Link from "next/link";
+import Button from "@/components/buttons/Butotn";
+import { GiStomach, GiScalpel, GiMedicines, GiKidneys } from "react-icons/gi";
+import { IoMdFemale } from "react-icons/io";
 
 const departments = [
-  { key: "cardio", icon: <Heart size={32} />, href: "/departments/cardiology" },
-  { key: "neuro", icon: <Brain size={32} />, href: "/departments/neurology" },
+  { key: "medicine", icon: <Pill size={32} />, href: "/departments/medicine" },
   { key: "ortho", icon: <Bone size={32} />, href: "/departments/orthopedics" },
+  {
+    key: "phy_medicine",
+    icon: <GiMedicines size={32} />,
+    href: "/departments/phy_medicine",
+  },
+  {
+    key: "urology",
+    icon: <GiKidneys size={32} />,
+    href: "/departments/urology",
+  },
+  { key: "cardio", icon: <Heart size={32} />, href: "/departments/cardio" },
+  {
+    key: "surgery",
+    icon: <GiScalpel size={32} />,
+    href: "/departments/surgery",
+  },
+  {
+    key: "gynecology",
+    icon: <IoMdFemale size={32} />,
+    href: "/departments/gynecology",
+  },
+  { key: "ent", icon: <Ear size={32} />, href: "/departments/ent" },
+  {
+    key: "gastroenterology",
+    icon: <GiStomach size={32} />,
+    href: "/departments/gastroenterology",
+  },
   {
     key: "pediatrics",
     icon: <Baby size={32} />,
     href: "/departments/pediatrics",
   },
+  { key: "skin_vd", icon: <Sun size={32} />, href: "/departments/skin_vd" },
+  { key: "neuro", icon: <Brain size={32} />, href: "/departments/neuro" },
   {
-    key: "gynecology",
-    icon: <Stethoscope size={32} />,
-    href: "/departments/gynecology",
-  },
-  {
-    key: "oncology",
-    icon: <Radiation size={32} />,
-    href: "/departments/oncology",
+    key: "dermatology",
+    icon: <Sun size={32} />,
+    href: "/departments/dermatology",
   },
   {
     key: "dentistry",
     icon: <FaTooth size={32} />,
     href: "/departments/dentistry",
   },
-  { key: "ent", icon: <Ear size={32} />, href: "/departments/ent" },
-  {
-    key: "radiology",
-    icon: <Microscope size={32} />,
-    href: "/departments/radiology",
-  },
-  {
-    key: "nephrology",
-    icon: <GiKidneys size={32} />,
-    href: "/departments/nephrology",
-  },
-  {
-    key: "psychiatry",
-    icon: <BrainCircuit size={32} />,
-    href: "/departments/psychiatry",
-  },
-  {
-    key: "dermatology",
-    icon: <Sun size={32} />,
-    href: "/departments/dermatology",
-  },
 ];
 
 const AboutPage = () => {
   const t = useTranslations();
+  const summary = [
+    t("summary.point_1"),
+    t("summary.point_2"),
+    t("summary.point_3"),
+    t("summary.point_4"),
+    t("summary.point_5"),
+    t("summary.point_6"),
+    t("summary.point_7"),
+    t("summary.point_8"),
+    t("summary.point_9"),
+    t("summary.point_10"),
+    t("summary.point_11"),
+    t("summary.point_12"),
+    t("summary.point_13"),
+  ];
   return (
     <div className="w-full">
       {/* Banner Section */}
@@ -176,18 +188,24 @@ const AboutPage = () => {
                 />
               </div>
               <div className="md:col-span-2 flex flex-col gap-4 mt-4 text-gray-600 text-justify">
-                <p className="flex items-start gap-2">
-                  <TiTick className="text-primary mt-1" size={20} />
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <TiTick className="text-primary" size={20} />
+                  </div>
                   {t("about.vision_state_1")}
-                </p>
-                <p className="flex items-start gap-2">
-                  <TiTick className="text-primary mt-1" size={20} />
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <TiTick className="text-primary" size={20} />
+                  </div>
                   {t("about.vision_state_2")}
-                </p>
-                <p className="flex items-start gap-2">
-                  <TiTick className="text-primary mt-1" size={20} />
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <TiTick className="text-primary" size={20} />
+                  </div>
                   {t("about.vision_state_3")}
-                </p>
+                </div>
               </div>
               <div className="w-full h-full items-center justify-center hidden md:flex">
                 <Image
@@ -223,26 +241,34 @@ const AboutPage = () => {
               {t("history.description")}
             </p>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start">
-                <TiTick className="text-primary mr-2 mt-1" size={20} />
+              <li className="flex items-start gap-4">
+                <div className="mt-1">
+                  <FaHandPointRight className="text-primary" size={20} />
+                </div>
                 <span className="text-gray-700">
                   {t("history.milestone_1")}
                 </span>
               </li>
-              <li className="flex items-start">
-                <TiTick className="text-primary mr-2 mt-1" size={20} />
+              <li className="flex items-start gap-4">
+                <div className="mt-1">
+                  <FaHandPointRight className="text-primary" size={20} />
+                </div>
                 <span className="text-gray-700">
                   {t("history.milestone_2")}
                 </span>
               </li>
-              <li className="flex items-start">
-                <TiTick className="text-primary mr-2 mt-1" size={20} />
+              <li className="flex items-start gap-4">
+                <div className="mt-1">
+                  <FaHandPointRight className="text-primary" size={20} />
+                </div>
                 <span className="text-gray-700">
                   {t("history.milestone_3")}
                 </span>
               </li>
-              <li className="flex items-start">
-                <TiTick className="text-primary mr-2 mt-1" size={20} />
+              <li className="flex items-start gap-4">
+                <div className="mt-1">
+                  <FaHandPointRight className="text-primary" size={20} />
+                </div>
                 <span className="text-gray-700">
                   {t("history.milestone_4")}
                 </span>
@@ -358,6 +384,14 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
+        <div className="mt-6 px-4 md:px-10 flex flex-row gap-4 items-center justify-center">
+          <Link href="/contact">
+            <Button theme="secondary">{t("shortcuts.contact")}</Button>
+          </Link>
+          <Link href="/appointment">
+            <Button>{t("shortcuts.appointment")}</Button>
+          </Link>
+        </div>
       </section>
 
       {/* Departments At a Glance */}
@@ -381,7 +415,7 @@ const AboutPage = () => {
                 <Link
                   href={href}
                   key={key}
-                  className="cursor-pointer transition-transform duration-300 hover:scale-105 p-2 md:p-4 bg-white shadow-md rounded-md bg-gradient-to-br from-teal-200 to-teal-400 flex flex-col items-center justify-center space-y-2"
+                  className="cursor-pointer transition-transform duration-300 hover:scale-125 p-2 md:p-4 bg-white shadow-md rounded-md bg-gradient-to-tr from-teal-100 to-sky-200 flex flex-col items-center justify-center space-y-2"
                 >
                   {icon}
                   <span className="font-semibold">
@@ -396,57 +430,45 @@ const AboutPage = () => {
 
       {/* Services At a Glance */}
       <section className="py-8">
-        <div className="px-4 md:px-10">
+        <div className="px-4 md:px-10 flex flex-col items-center">
           <h2 className="text-3xl font-semibold text-gray-800 text-center">
             {t("about.services_glance")}
           </h2>
-          <ul className="mt-4 text-gray-600 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.emergency")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.cardiology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.neurology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.orthopedics")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.pediatrics")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.oncology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.gynecology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.dermatology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.urology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.radiology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.nephrology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.physiotherapy")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.endocrinology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.gastroenterology")}
-            </li>
-            <li className="p-4 bg-white shadow-md rounded-md">
-              {t("services.hematology")}
-            </li>
-          </ul>
+          <div className="w-full md:w-[70%] lg:w-[50%] md:mt-4">
+            {summary.map((summary, index) => (
+              <div key={index} className="flex flex-row gap-2 my-2">
+                <div>
+                  <TiTick className="text-primary text-[24px]" />
+                </div>
+                <h3 className="md:text-xl font-[500] text-black">{summary}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8">
+        <div className="px-4 md:px-10 flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center">
+          <Link href="/contact" className="w-[70%] md:w-fit">
+            <Button theme="secondary" className="w-full md:w-fit">
+              {t("shortcuts.contact")}
+            </Button>
+          </Link>
+          <Link href="/appointment" className="w-[70%]  md:w-fit">
+            <Button className="w-full md:w-fit">
+              {t("shortcuts.appointment")}
+            </Button>
+          </Link>
+          <a
+            href="https://www.google.com/maps/place/Patiya+Upazila/@22.294119,91.976584,14z/data=!4m6!3m5!1s0x30ad237be723c31f:0x232df16458730624!8m2!3d22.2949743!4d91.9759487!16s%2Fm%2F028c47s?hl=en&entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-[70%]  md:w-fit"
+          >
+            <Button theme="secondary" className="w-full md:w-fit">
+              {t("shortcuts.find")}
+            </Button>
+          </a>
         </div>
       </section>
     </div>
