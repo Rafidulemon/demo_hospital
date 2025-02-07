@@ -10,17 +10,10 @@ const DesktopNav = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const dropdownItems: {
-    about: string[];
     services: string[];
     departments: string[];
     doctors: string[];
   } = {
-    about: [
-      t("nav.about_demo"),
-      t("nav.history"),
-      t("nav.md"),
-      t("nav.mission"),
-    ],
     services: [
       t("nav.cardiology"),
       t("nav.neurology"),
@@ -76,15 +69,58 @@ const DesktopNav = () => {
     bn_href: string;
     dropdown?: DropdownKey;
   }[] = [
-    { label: t("nav.home"), href:"/", en_href: "/en", bn_href: "/bn" },
-    { label: t("nav.about"), href:"/about", en_href: "/en/about", bn_href: "/bn/about", dropdown: "about" },
-    { label: t("nav.department"), href:"/departments", en_href: "/en/departments", bn_href: "/bn/departments", dropdown: "departments" },
-    { label: t("nav.service"), href:"/services", en_href: "/en/services", bn_href: "/bn/services", dropdown: "services" },
-    { label: t("nav.doctors"), href:"/doctors", en_href: "/en/doctors", bn_href: "/bn/doctors", dropdown: "doctors" },
-    { label: t("nav.news"), href: "/news", en_href: "/en/news", bn_href: "/bn/news" },
-    { label: t("nav.faq"), href:"/faq", en_href: "/en/faq", bn_href: "/bn/faq" },
-    { label: t("nav.csr"), href:"/csr", en_href: "/en/csr", bn_href: "/bn/csr" },
-    { label: t("nav.contact"), href:"/contact", en_href: "/en/contact", bn_href: "/bn/contact" },
+    { label: t("nav.home"), href: "/", en_href: "/en", bn_href: "/bn" },
+    {
+      label: t("nav.about"),
+      href: "/about",
+      en_href: "/en/about",
+      bn_href: "/bn/about",
+    },
+    {
+      label: t("nav.department"),
+      href: "/departments",
+      en_href: "/en/departments",
+      bn_href: "/bn/departments",
+      dropdown: "departments",
+    },
+    {
+      label: t("nav.service"),
+      href: "/services",
+      en_href: "/en/services",
+      bn_href: "/bn/services",
+      dropdown: "services",
+    },
+    {
+      label: t("nav.doctors"),
+      href: "/doctors",
+      en_href: "/en/doctors",
+      bn_href: "/bn/doctors",
+      dropdown: "doctors",
+    },
+    {
+      label: t("nav.news"),
+      href: "/news",
+      en_href: "/en/news",
+      bn_href: "/bn/news",
+    },
+    {
+      label: t("nav.faq"),
+      href: "/faq",
+      en_href: "/en/faq",
+      bn_href: "/bn/faq",
+    },
+    {
+      label: t("nav.appointment"),
+      href: "/appointment",
+      en_href: "/en/appointment",
+      bn_href: "/bn/appointment",
+    },
+    {
+      label: t("nav.contact"),
+      href: "/contact",
+      en_href: "/en/contact",
+      bn_href: "/bn/contact",
+    },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -112,7 +148,9 @@ const DesktopNav = () => {
               <Link
                 href={item.href}
                 className={`text-[16px] font-[500] ${
-                  isActive(item.en_href) || isActive(item.bn_href) ? "text-primary font-bold" : "text-black"
+                  isActive(item.en_href) || isActive(item.bn_href)
+                    ? "text-primary font-bold"
+                    : "text-black"
                 } hover:text-primary`}
                 onMouseEnter={() =>
                   item.dropdown && handleMouseEnter(item.dropdown)
@@ -153,7 +191,11 @@ const DesktopNav = () => {
                     className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer"
                   >
                     <Link
-                      href={`/doctors?category=${encodeURIComponent(subItem)}`}
+                      href={`${
+                        item.dropdown === "doctors"
+                          ? `/doctors?category=${encodeURIComponent(subItem)}`
+                          : subItem
+                      }`}
                     >
                       {subItem}
                     </Link>

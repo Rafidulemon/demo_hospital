@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaTimes, FaChevronUp, FaChevronDown, FaBars } from "react-icons/fa";
@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { IoLogIn } from "react-icons/io5";
 const MobileNav = () => {
   const t = useTranslations();
   const pathname = usePathname();
@@ -13,17 +14,10 @@ const MobileNav = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownItems: {
-    about: string[];
     services: string[];
     departments: string[];
     doctors: string[];
   } = {
-    about: [
-      t("nav.about_demo"),
-      t("nav.history"),
-      t("nav.md"),
-      t("nav.mission"),
-    ],
     services: [
       t("nav.cardiology"),
       t("nav.neurology"),
@@ -78,15 +72,58 @@ const MobileNav = () => {
     ref?: string;
     dropdown?: DropdownKey;
   }[] = [
-    { label: t("nav.home"), href:"/", en_href: "/en", bn_href: "/bn" },
-    { label: t("nav.about"), ref:"/about", en_href: "/en/about", bn_href: "/bn/about", dropdown: "about" },
-    { label: t("nav.department"), ref:"/departments", en_href: "/en/departments", bn_href: "/bn/departments", dropdown: "departments" },
-    { label: t("nav.service"), ref:"/services", en_href: "/en/services", bn_href: "/bn/services", dropdown: "services" },
-    { label: t("nav.doctors"), ref:"/doctors", en_href: "/en/doctors", bn_href: "/bn/doctors", dropdown: "doctors" },
-    { label: t("nav.news"), href: "/news", en_href: "/en/news", bn_href: "/bn/news" },
-    { label: t("nav.faq"), href:"/faq", en_href: "/en/faq", bn_href: "/bn/faq" },
-    { label: t("nav.csr"), href:"/csr", en_href: "/en/csr", bn_href: "/bn/csr" },
-    { label: t("nav.contact"), href:"/contact", en_href: "/en/contact", bn_href: "/bn/contact" },
+    { label: t("nav.home"), href: "/", en_href: "/en", bn_href: "/bn" },
+    {
+      label: t("nav.about"),
+      href: "/about",
+      en_href: "/en/about",
+      bn_href: "/bn/about",
+    },
+    {
+      label: t("nav.department"),
+      ref: "/departments",
+      en_href: "/en/departments",
+      bn_href: "/bn/departments",
+      dropdown: "departments",
+    },
+    {
+      label: t("nav.service"),
+      ref: "/services",
+      en_href: "/en/services",
+      bn_href: "/bn/services",
+      dropdown: "services",
+    },
+    {
+      label: t("nav.doctors"),
+      ref: "/doctors",
+      en_href: "/en/doctors",
+      bn_href: "/bn/doctors",
+      dropdown: "doctors",
+    },
+    {
+      label: t("nav.news"),
+      href: "/news",
+      en_href: "/en/news",
+      bn_href: "/bn/news",
+    },
+    {
+      label: t("nav.faq"),
+      href: "/faq",
+      en_href: "/en/faq",
+      bn_href: "/bn/faq",
+    },
+    {
+      label: t("nav.appointment"),
+      href: "/appointment",
+      en_href: "/en/appointment",
+      bn_href: "/bn/appointment",
+    },
+    {
+      label: t("nav.contact"),
+      href: "/contact",
+      en_href: "/en/contact",
+      bn_href: "/bn/contact",
+    },
   ];
   const isActive = (path: string) => pathname === path;
   const handleDropdownToggle = (menu: string) => {
@@ -138,8 +175,16 @@ const MobileNav = () => {
                   </Link>
                 ) : (
                   <div>
-                    <button className={`flex items-center gap-2 text-[16px] font-[500] hover:text-primary ${isActive(item.en_href) || isActive(item.bn_href) ? "text-primary font-bold" : ""}`}>
-                      <Link href={item.ref!} onClick={toggleMobileMenu}>{item.label}{" "} </Link>
+                    <button
+                      className={`flex items-center gap-2 text-[16px] font-[500] hover:text-primary ${
+                        isActive(item.en_href) || isActive(item.bn_href)
+                          ? "text-primary font-bold"
+                          : ""
+                      }`}
+                    >
+                      <Link href={item.ref!} onClick={toggleMobileMenu}>
+                        {item.label}{" "}
+                      </Link>
                       {openDropdown === item.dropdown ? (
                         <FaChevronUp
                           className="text-primary"
@@ -162,9 +207,11 @@ const MobileNav = () => {
                           className="py-2 hover:bg-primary hover:text-white cursor-pointer"
                         >
                           <Link
-                            href={`/doctors?category=${encodeURIComponent(
-                              subItem
-                            )}`}
+                            href={`${
+                              item.dropdown === "doctors"
+                                ? `/doctors?category=${encodeURIComponent(subItem)}`
+                                : subItem
+                            }`}
                             onClick={toggleMobileMenu}
                           >
                             {subItem}
@@ -176,6 +223,10 @@ const MobileNav = () => {
                 )}
               </li>
             ))}
+            <div className="w-full flex gap-2 text-primary hover:text-primary_light cursor-pointer">
+              <IoLogIn className="h-full" size={25} />
+              {t("header.login")}
+            </div>
           </ul>
         </nav>
       </div>

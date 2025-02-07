@@ -6,6 +6,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import Nav from "../Navbar";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/navigation";
+import { IoLogIn } from "react-icons/io5";
 
 export default function Header() {
   const locale = useLocale();
@@ -20,7 +21,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 bg-white w-full flex flex-col gap-0">
       <div className="w-full lg:w-[80%] mx-auto px-4 flex flex-row items-center justify-between">
-        <div className="flex items-center gap-4 w-[60px] h-[55px] md:w-[120px] md:h-[109px]" onClick={() => router.push("/")}>
+        <div
+          className="flex items-center gap-4 w-[60px] h-[55px] md:w-[120px] md:h-[109px]"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/logo/logo.png"
             alt="Patiya General Hospital"
@@ -40,7 +44,7 @@ export default function Header() {
               {t("header.emergency")}
             </span>
             <div className="group cursor-pointer text-[10px] md:text-[16px] hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
-              <FaPhoneAlt className="text-primary group-hover:text-white"/>
+              <FaPhoneAlt className="text-primary group-hover:text-white" />
               <span className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white">
                 12345
               </span>
@@ -80,6 +84,12 @@ export default function Header() {
             >
               বাংলা
             </button>
+          </div>
+          <div className="hidden md:flex h-[38px] flex-col justify-center">
+            <div className="w-full flex gap-2 text-primary hover:text-primary_light cursor-pointer">
+              <IoLogIn className="h-full" size={25}/>
+              {t("header.login")}
+            </div>
           </div>
         </div>
         <div className="md:hidden flex items-center justify-center md:ml-10">

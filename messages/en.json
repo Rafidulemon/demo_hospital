@@ -1,7 +1,10 @@
 {
   "header": {
     "emergency": "Emergency",
-    "lifeline": "Hospital Lifeline"
+    "lifeline": "Hospital Lifeline",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile"
   },
   "search": {
     "search": "Search Doctor or Service"
@@ -15,6 +18,7 @@
     "news": "News",
     "csr": "CSR",
     "faq": "FAQ",
+    "appointment": "Appointment",
     "contact": "Contact Us",
     "medicine": "Medicine",
     "surgery": "Surgery",
@@ -269,5 +273,79 @@
   "doctors": {
     "title": "Meet Our Doctors",
     "no_data": "No Doctors Found"
+  },
+  "about": {
+    "hospital_overview": "Hospital Overview",
+    "hospital_description": "Our hospital is a leading healthcare institution dedicated to providing world-class medical services with cutting-edge technology and compassionate patient care. With a team of highly experienced doctors, nurses, and healthcare professionals, we strive to ensure the well-being of our patients by offering comprehensive medical treatment across various specialties.\n\nWe are equipped with modern diagnostic and therapeutic facilities, allowing us to deliver accurate diagnoses and effective treatments. Our hospital integrates advanced medical research with innovative clinical practices to provide top-tier healthcare solutions. Our specialized departments, including cardiology, neurology, orthopedics, pediatrics, oncology, and emergency services, work collaboratively to ensure that every patient receives personalized care tailored to their needs.\n\nPatient-centered care is at the heart of our philosophy. We prioritize safety, comfort, and efficiency, making healthcare accessible and convenient for our patients. From state-of-the-art operation theaters to advanced imaging and laboratory facilities, our hospital offers a one-stop solution for all medical needs. Additionally, our well-equipped intensive care units (ICUs) provide round-the-clock monitoring and expert supervision for critical cases.\n\nBeyond treatment, we focus on preventive healthcare, offering wellness programs, health screenings, and patient education initiatives. We believe that prevention is as crucial as cure, and we actively promote a holistic approach to health and well-being. Our commitment to excellence, ethical medical practices, and community service makes us a trusted healthcare provider.\n\nWe continue to grow and evolve, embracing the latest medical advancements to provide superior healthcare services. Whether you need emergency care, routine check-ups, or specialized treatments, our hospital is here to serve you with dedication and professionalism.",
+    "services_glance": "Services At a Glance",
+    "why_choose_us": "Why Choose Us?",
+    "experienced_doctors": "Experienced Doctors",
+    "experienced_doctors_desc": "Our hospital boasts a team of highly skilled and experienced doctors who specialize in various medical fields. They are dedicated to providing accurate diagnoses and effective treatments to ensure the best outcomes for our patients. With years of training and hands-on experience, our doctors stay updated with the latest medical advancements, ensuring that our patients receive world-class care.",
+    "modern_facilities": "Modern Facilities",
+    "modern_facilities_desc": "We take pride in our state-of-the-art medical facilities, which include advanced diagnostic centers, fully equipped operation theaters, and comfortable patient rooms. Our hospital is designed to provide a seamless and efficient healthcare experience, ensuring that our patients receive top-quality treatment in a safe and hygienic environment.",
+    "advanced_technology": "Advanced Technology",
+    "advanced_technology_desc": "Utilizing the latest medical technology, we ensure precision and efficiency in every aspect of our treatment process. From robotic-assisted surgeries to AI-powered diagnostics, our commitment to innovation helps us deliver the highest standard of care while reducing risks and improving recovery times.",
+    "comprehensive_care": "Comprehensive Care",
+    "comprehensive_care_desc": "We provide a full spectrum of healthcare services, including preventive care, diagnostics, treatment, and rehabilitation. Our multidisciplinary team collaborates to develop personalized treatment plans that cater to the unique needs of each patient, ensuring holistic and effective medical solutions.",
+    "patient_satisfaction": "Patient Satisfaction",
+    "patient_satisfaction_desc": "Our primary goal is to ensure patient satisfaction by offering compassionate and efficient care. We value patient feedback and continuously strive to enhance our services to provide a comfortable and reassuring healthcare experience. Our dedicated support staff ensures that every patient receives the attention and care they deserve.",
+    "emergency_services": "24/7 Emergency Services",
+    "emergency_services_desc": "Our emergency department is equipped to handle critical medical situations with speed and efficiency. Our team of emergency specialists is available 24/7 to provide immediate care and life-saving interventions, ensuring that patients in urgent need receive the best possible treatment.",
+    "mission_vision": "Mission and Vision",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "mission_desc": "To provide world-class healthcare services with compassion, integrity, and excellence, ensuring the well-being of our patients and the community.",
+    "mission_state": "Our mission is to deliver high-quality, patient-centered healthcare through advanced medical technologies, experienced professionals, and a commitment to continuous improvement.",
+    "vision_desc": "To be a globally recognized healthcare leader, known for innovation, exceptional patient care, and medical excellence.",
+    "vision_state_1": "To revolutionize healthcare by integrating cutting-edge technology and personalized treatments for better patient outcomes.",
+    "vision_state_2": "To build a healthier society by fostering medical research, education, and community outreach programs.",
+    "vision_state_3": "To set the standard for quality, safety, and innovation in healthcare, ensuring accessible and affordable treatment for all.",
+    "core_values": "Core Values",
+    "core_value_1": "Compassion",
+    "core_value_2": "Quality",
+    "core_value_3": "Innovation",
+    "core_value_4": "Patient Care",
+    "core_value_5": "Safety",
+    "core_value_6": "Excellence"
+  },
+  "history": {
+    "title": "Our History",
+    "description": "Demo Hospital was established in 1995 with a mission to provide exceptional healthcare services to the community. Over the years, we have grown into a trusted institution, offering advanced medical treatments and compassionate patient care. Our journey began with a small team of dedicated doctors and staff, committed to making a difference in people's lives. \n\nIn 2005, we expanded our facilities to include state-of-the-art medical technology, allowing us to offer specialized treatments in cardiology, neurology, oncology, and more. This expansion enabled us to serve a larger patient base and improve healthcare outcomes significantly. \n\nBy 2015, we were recognized as one of the leading healthcare providers in the region, known for our commitment to innovation and excellence. Our hospital introduced advanced diagnostic and surgical procedures, further enhancing the quality of care. \n\nIn 2022, we launched new specialized departments, including advanced emergency care, critical care units, and rehabilitation centers. Today, Patiya General Hospital continues to evolve, striving for excellence and ensuring that every patient receives the highest standard of medical care. Our commitment to compassion, innovation, and quality healthcare remains unwavering as we look forward to a future of continued growth and service.",
+    "milestone_1": "Established in 1995 with a mission to serve the community.",
+    "milestone_2": "Expanded facilities in 2005 with modern medical technology.",
+    "milestone_3": "Recognized as a leading healthcare provider in 2015.",
+    "milestone_4": "Launched specialized departments and advanced care units in 2022."
+  },
+  "services": {
+    "emergency": "Emergency Care",
+    "cardiology": "Cardiology",
+    "neurology": "Neurology",
+    "orthopedics": "Orthopedics",
+    "pediatrics": "Pediatrics",
+    "oncology": "Oncology",
+    "gynecology": "Gynecology",
+    "dermatology": "Dermatology",
+    "urology": "Urology",
+    "radiology": "Radiology",
+    "nephrology": "Nephrology",
+    "physiotherapy": "Physiotherapy",
+    "endocrinology": "Endocrinology",
+    "gastroenterology": "Gastroenterology",
+    "hematology": "Hematology"
+  },
+  "departments": {
+    "title": "Departments at a Glance",
+    "cardio": "Cardiology",
+    "neuro": "Neurology",
+    "ortho": "Orthopedics",
+    "pediatrics": "Pediatrics",
+    "gynecology": "Gynecology",
+    "oncology": "Oncology",
+    "dentistry": "Dentistry",
+    "ent": "ENT (Ear, Nose, and Throat)",
+    "radiology": "Radiology",
+    "nephrology": "Nephrology",
+    "psychiatry": "Psychiatry",
+    "dermatology": "Dermatology"
   }
 }
