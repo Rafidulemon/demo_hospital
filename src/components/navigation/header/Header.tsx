@@ -45,7 +45,10 @@ export default function Header() {
             </span>
             <div className="group cursor-pointer text-[10px] md:text-[16px] hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
               <FaPhoneAlt className="text-primary group-hover:text-white" />
-              <a href="tel:12345" className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white">
+              <a
+                href="tel:12345"
+                className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white"
+              >
                 12345
               </a>
             </div>
@@ -57,7 +60,10 @@ export default function Header() {
             </span>
             <div className="group cursor-pointer text-[10px] md:text-[16px] hover:bg-primary border border-primary rounded-md flex flex-row items-center gap-[3px] md:gap-2 py-1 md:py-2 px-1 md:px-3">
               <FaPhoneAlt className="text-primary group-hover:text-white" />
-              <a href="tel:+8801365412345" className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white">
+              <a
+                href="tel:+8801365412345"
+                className="text-black text-[12px] md:text-[14px] font-medium group-hover:text-white"
+              >
                 +8801365412345
               </a>
             </div>
@@ -85,9 +91,12 @@ export default function Header() {
               বাংলা
             </button>
           </div>
-          <div className="hidden md:flex h-[38px] flex-col justify-center">
+          <div
+            className="hidden md:flex h-[38px] flex-col justify-center"
+            onClick={() => router.push("/auth/login")}
+          >
             <div className="w-full flex gap-2 text-primary hover:text-primary_light cursor-pointer">
-              <IoLogIn className="h-full" size={25}/>
+              <IoLogIn className="h-full" size={25} />
               {t("header.login")}
             </div>
           </div>

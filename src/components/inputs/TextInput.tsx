@@ -14,7 +14,7 @@ type Props = {
   register?: UseFormRegister<any>;
 };
 
-function TextInput(props: Props) {
+const TextInput = (props: Props) => {
   const {
     id,
     name = "name",

@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import { FaTooth, FaHandPointRight } from "react-icons/fa";
 import Link from "next/link";
-import Button from "@/components/buttons/Butotn";
+import Button from "@/components/buttons/Button";
 import { GiStomach, GiScalpel, GiMedicines, GiKidneys } from "react-icons/gi";
 import { IoMdFemale } from "react-icons/io";
 

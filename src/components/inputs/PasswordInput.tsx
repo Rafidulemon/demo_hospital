@@ -35,11 +35,11 @@ function PasswordInput(props: Props) {
   const [viewPassword, setViewPassword] = useState<boolean>(false);
 
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={`flex flex-col ${className} ${error && "mb-6"}`}>
       <div className="flex flex-row gap-[5px] mb-2">
         <label className="text-[16px] text-text_bold font-bold">{label}</label>
         {isRequired && (
-          <span className="text-[16px] font-bold text-tertiary">*</span>
+          <span className="text-[16px] font-bold text-red-500">*</span>
         )}
       </div>
       <div className={`relative h-[56px] w-full border-black`}>
@@ -69,7 +69,7 @@ function PasswordInput(props: Props) {
         />
       )}
       {error && (
-        <div className="text-[14px] text-tertiary">{error.message}</div>
+        <div className="text-[14px] text-red-500">{error.message}</div>
       )}
       </div>
     </div>

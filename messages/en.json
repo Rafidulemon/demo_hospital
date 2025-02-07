@@ -353,5 +353,26 @@
     "appointment": "Make an Appointment",
     "contact": "Contact Us",
     "find": "Find Us on Google Maps"
+  },
+  "login_signup": {
+    "login": "Log in",
+    "signup": "Sign up",
+    "phone": "Mobile Number",
+    "phone_placeholder": "Enter your mobile number",
+    "password": "Password",
+    "password_placeholder": "Enter your password",
+    "remember": "Remember me",
+    "forget": "Forget Password?",
+    "access": "Can't access your account?",
+    "already": "Already have an account?",
+    "no_account": "Don't have an account?",
+    "click_login": "Click here to log in",
+    "click_signup": "Click here to sign up",
+    "invalid_phone": "Invalid mobile number",
+    "no_number": "Mobile number not found",
+    "min_number": "Mobile number must be at least 10 digits",
+    "max_number": "Mobile number cannot exceed 15 digits",
+    "min_pass": "Password must be at least 6 characters",
+    "wrong_pass": "Wrong password"
   }
 }

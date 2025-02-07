@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FaTooth, FaHeartbeat } from "react-icons/fa";
 import Link from "next/link";
-import Button from "@/components/buttons/Butotn";
+import Button from "@/components/buttons/Button";
 import { GiStomach, GiScalpel, GiMedicines, GiKidneys } from "react-icons/gi";
 import { IoMdFemale } from "react-icons/io";
 import { LuPill, LuBrain, LuBaby, LuSun } from "react-icons/lu";

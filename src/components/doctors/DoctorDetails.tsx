@@ -1,6 +1,6 @@
 import React, { type ReactNode } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
-import Button from "../buttons/Butotn";
+import Button from "../buttons/Button";
 
 type Props = {
   open: boolean;
