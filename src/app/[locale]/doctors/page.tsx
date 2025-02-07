@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { DetailsModal } from "@/components/doctors/DoctorDetails";
-import Button from "@/components/buttons/Butotn";
 
 const DoctorsPage: React.FC = () => {
   const searchParams = useSearchParams();

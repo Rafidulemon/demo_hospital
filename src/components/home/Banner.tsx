@@ -25,7 +25,7 @@ const Banner = () => {
       title: t("banner.slide3.title"),
       subtitle: t("banner.slide3.subtitle"),
       buttonText: t("banner.slide3.buttonText"),
-      buttonLink: "/services",
+      buttonLink: "/departments",
     },
     {
       image: "/slider/camp.jpg",
