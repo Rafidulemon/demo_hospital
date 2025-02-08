@@ -209,7 +209,9 @@ const MobileNav = () => {
                           <Link
                             href={`${
                               item.dropdown === "doctors"
-                                ? `/doctors?category=${encodeURIComponent(subItem)}`
+                                ? `/doctors?category=${encodeURIComponent(
+                                    subItem
+                                  )}`
                                 : subItem
                             }`}
                             onClick={toggleMobileMenu}
@@ -223,7 +225,10 @@ const MobileNav = () => {
                 )}
               </li>
             ))}
-            <div className="w-full flex gap-2 text-primary hover:text-primary_light cursor-pointer">
+            <div
+              className="w-full flex gap-2 text-primary hover:text-primary_light cursor-pointer"
+              onClick={() => router.push("/auth/login")}
+            >
               <IoLogIn className="h-full" size={25} />
               {t("header.login")}
             </div>

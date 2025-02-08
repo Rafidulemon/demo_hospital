@@ -42,7 +42,7 @@ const LoginPage = () => {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <div className="h-[70%] md:h-fit flex md:flex-row flex-col w-[90%] max-w-[900px] bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="h-[70%] md:h-fit flex md:flex-row flex-col w-[90%] max-w-[900px] bg-white shadow-lg rounded-lg overflow-y-auto">
         {/* Left Side (Form) */}
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           <h2 className="text-2xl font-bold text-center text-gray-700">
@@ -131,8 +131,8 @@ const LoginPage = () => {
             <Image
               src="/images/sign_up_doctor.png"
               alt="Doctor"
-              width={140}
-              height={140}
+              width={120}
+              height={120}
             />
           </div>
         </div>

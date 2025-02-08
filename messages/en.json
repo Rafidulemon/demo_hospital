@@ -317,7 +317,7 @@
     "milestone_4": "Launched specialized departments and advanced care units in 2022."
   },
   "departments": {
-    "title": "Departments at a Glance",  
+    "title": "Departments at a Glance",
     "medicine": "Medicine",
     "ortho": "Orthopedics",
     "phy_medicine": "Physical Medicine",
@@ -373,6 +373,27 @@
     "min_number": "Mobile number must be at least 10 digits",
     "max_number": "Mobile number cannot exceed 15 digits",
     "min_pass": "Password must be at least 6 characters",
-    "wrong_pass": "Wrong password"
+    "wrong_pass": "Wrong password",
+    "name": "Full Name",
+    "name_placeholder": "Enter your full name",
+    "age": "Age",
+    "age_placeholder": "Enter your age",
+    "dob": "Date of Birth",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "confirm_password": "Confirm password",
+    "confirm_password_placeholder": "Confirm your password",
+    "email": "Email",
+    "email_placeholder": "Enter your email"
+  },
+  "otp": {
+    "otp_verification": "OTP Verification",
+    "enter_otp": "Enter the 4-digit OTP sent to your mobile number",
+    "verify": "Verify",
+    "invalid_otp": "Please enter a valid 4-digit OTP",
+    "resend_in": "Resend in",
+    "resend_otp": "Resend OTP"
   }
 }
