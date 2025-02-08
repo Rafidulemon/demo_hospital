@@ -27,7 +27,7 @@ const Signup = ({ setShowOTP }: { setShowOTP: (value: boolean) => void }) => {
 
   const handleSignup = (data: FormData) => {
     console.log("Form submitted:", data);
-    setShowOTP(true); // Show OTP component after form submission
+    setShowOTP(true);
   };
 
   return (
