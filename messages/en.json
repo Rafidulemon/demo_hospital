@@ -395,5 +395,10 @@
     "invalid_otp": "Please enter a valid 4-digit OTP",
     "resend_in": "Resend in",
     "resend_otp": "Resend OTP"
+  },
+  "forget_password": {
+    "title": "Forget Password?",
+    "submit": "Submit",
+    "email_sent": "An email has been sent to your email address"
   }
 }

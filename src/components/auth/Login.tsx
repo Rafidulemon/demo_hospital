@@ -76,9 +76,6 @@ const Login = () => {
             <Button type="submit" theme="primary" isWidthFull className="mt-4">
               {t("login")}
             </Button>
-            <p className="text-sm text-center mt-4 text-gray-500 cursor-pointer">
-              {t("access")}
-            </p>
           </form>
         </div>
   )
